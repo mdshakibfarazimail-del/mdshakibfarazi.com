@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COMMAND CENTER // MD SHAKIB FARAZI (PRIVATE)</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css?v=admin-auth-env-v1">
+
+  <style>
+    body {
+      background-color: #06090e;
+      color: #f1f5f9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Private Login Screen */
+    .admin-standalone-auth-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .admin-standalone-window {
+      display: none;
+      min-height: 100vh;
+      flex-direction: column;
+      position: relative;
+      z-index: 10;
+    }
+
+    .admin-top-nav {
+      background: #090e15;
+      border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .admin-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .admin-brand svg {
+      color: var(--neon-emerald);
+    }
+
+    .admin-status-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--neon-emerald);
+      background: rgba(0, 255, 136, 0.1);
+      border: 1px solid rgba(0, 255, 136, 0.25);
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      margin-left: 0.5rem;
+    }
+
+    .admin-nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .admin-view-site-link {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-family: var(--font-accent);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+    }
+
+    .admin-view-site-link:hover {
+      color: var(--neon-emerald);
+    }
+
+    .admin-logout-btn {
+      background: rgba(255, 95, 86, 0.1);
+      border: 1px solid rgba(255, 95, 86, 0.3);
+      color: #ff5f56;
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      font-family: var(--font-accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: var(--transition-smooth);
+    }
+
+    .admin-logout-btn:hover {
+      background: #ff5f56;
+      color: #06090e;
+    }
+
+    .admin-standalone-body {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      flex: 1;
+    }
+
+    .admin-standalone-sidebar {
+      background: #080d13;
+      border-right: 1px solid rgba(0, 255, 136, 0.15);
+      padding: 1.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: sticky;
+      top: 65px;
+      height: calc(100vh - 65px);
+      overflow-y: auto;
+    }
+
+    .admin-standalone-content {
+      padding: 2.5rem 3rem;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Grids -->
+  <div class="cyber-grid-overlay"></div>
+  <div class="ambient-glow-mesh"></div>
+
+  <!-- ==========================================================================
+       PRIVACY AUTHENTICATION GATE (ONLY ACCESSIBLE TO SHAKIB)
+       ========================================================================== -->
+  <div id="admin-standalone-auth" class="admin-standalone-auth-wrap">
+    <div class="admin-auth-box">
+      <div class="admin-auth-icon">
+        <i data-lucide="shield-check" style="width:32px;height:32px;"></i>
+      </div>
+      <div>
+        <h2 class="admin-auth-title">PRIVATE COMMAND CENTER</h2>
+        <div style="font-family:var(--font-accent);color:var(--neon-emerald);font-size:0.85rem;letter-spacing:0.1em;margin-top:0.3rem;">
+          MD SHAKIB FARAZI • CONFIDENTIAL PORTAL
+        </div>
+      </div>
+
+      <p style="color:var(--text-muted);font-size:0.85rem;line-height:1.6;">
+        This portal is restricted to <strong>Md Shakib Farazi</strong>. Enter the admin passcode configured in the server environment to continue.
+      </p>
+
+      <div style="display:flex;flex-direction:column;gap:0.75rem;">
+        <input type="password" id="admin-auth-input" class="admin-input" placeholder="Enter Security Passcode" style="text-align:center;font-size:1.15rem;letter-spacing:0.25em;" autofocus>
+        <button id="admin-auth-submit-btn" class="btn-hero-glow" style="border:none;cursor:pointer;justify-content:center;width:100%;">
+          <span>Unlock Command Center</span>
+          <span class="arrow-icon">→</span>
+        </button>
+      </div>
+
+      <div id="admin-auth-error" style="display:none;color:#ff5f56;font-family:var(--font-mono);font-size:0.8rem;background:rgba(255,95,86,0.1);padding:0.5rem;border-radius:8px;border:1px solid rgba(255,95,86,0.3);">
+        Access Denied: Incorrect security passcode.
+      </div>
+
+      <div style="font-size:0.75rem;color:var(--text-dim);font-family:var(--font-mono);margin-top:0.5rem;">
+        Sign-in requires a running server with a secure <code>ADMIN_PIN</code> environment variable.
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       AUTHENTICATED PRIVATE ADMIN DASHBOARD
+       ========================================================================== -->
+  <div id="admin-standalone-dashboard" class="admin-standalone-window">
+    <!-- Top Bar -->
+    <header class="admin-top-nav">
+      <div class="admin-brand">
+        <i data-lucide="shield"></i>
+        <span>SHAKIB FARAZI // COMMAND CENTER</span>
+        <span class="admin-status-tag">PRIVATE & ENCRYPTED</span>
+      </div>
+
+      <div class="admin-nav-right">
+        <a href="/" target="_blank" class="admin-view-site-link">
+          <i data-lucide="external-link" style="width:16px;height:16px;"></i>
+          <span>View Public Website</span>
+        </a>
+
+        <button id="admin-save-btn-top" class="admin-save-all-btn">
+          <i data-lucide="save" style="width:16px;height:16px;"></i>
+          <span>SAVE & PUBLISH LIVE</span>
+        </button>
+
+        <button id="admin-logout-btn-top" class="admin-logout-btn">
+          <i data-lucide="log-out" style="width:14px;height:14px;"></i>
+          <span>Lock & Exit</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <div class="admin-standalone-body">
+      <!-- Left Sidebar -->
+      <aside class="admin-standalone-sidebar">
+        <button class="admin-tab-btn active" data-tab="overview">
+          <i data-lucide="layout-dashboard" style="width:18px;height:18px;"></i>
+          <span>System Overview</span>
+        </button>
+        <button class="admin-tab-btn" data-tab="profile">
+          <i data-lucide="user" style="width:18px;height:18px;"></i>
+          <span>Hero & Profile</span>
+        </button>
+        <button class="admin-tab-btn" data-tab="esports">
+          <i data-lucide="swords" style="width:18px;height:18px;"></i>
+          <span>Esports & Squad</span>
+        </button>
+        <button class="admin-tab-btn" data-tab="designs">
+          <i data-lucide="palette" style="width:18px;height:18px;"></i>
+          <span>Projects &amp; Design Vault</span>
+        </button>
+        <button class="admin-tab-btn" data-tab="tools">
+          <i data-lucide="terminal" style="width:18px;height:18px;"></i>
+          <span>Smart Tools</span>
+        </button>
+        <button class="admin-tab-btn" data-tab="growth">
+          <i data-lucide="trending-up" style="width:18px;height:18px;"></i>
+          <span>Growth Metrics</span>
+        </button>
+        <button class="admin-tab-btn" data-tab="contact">
+          <i data-lucide="radio" style="width:18px;height:18px;"></i>
+          <span>Contact Info</span>
+        </button>
+        <button class="admin-tab-btn" data-tab="inbox">
+          <i data-lucide="inbox" style="width:18px;height:18px;"></i>
+          <span>Private Inbox</span>
+          <span id="admin-inbox-badge-count" class="admin-tab-badge">0</span>
+        </button>
+        <button class="admin-tab-btn" data-tab="settings">
+          <i data-lucide="lock" style="width:18px;height:18px;"></i>
+          <span>Security & Backups</span>
+        </button>
+      </aside>
+
+      <!-- Content Views -->
+      <main class="admin-standalone-content">
+
+        <!-- TAB 0: OVERVIEW -->
+        <div id="view-overview" class="admin-view-panel active">
+          <h2 class="admin-panel-title">
+            <i data-lucide="activity"></i>
+            <span>Executive Overview</span>
+          </h2>
+
+          <div class="admin-grid-4">
+            <div class="admin-form-section" style="text-align:center;">
+              <div style="font-size:0.8rem;color:var(--text-muted);font-family:var(--font-mono);">INBOX INQUIRIES</div>
+              <div id="dash-stat-msgs" style="font-family:var(--font-display);font-size:2rem;color:var(--neon-emerald);font-weight:800;margin:0.4rem 0;">1</div>
+              <div style="font-size:0.75rem;color:var(--neon-cyan);">Client & Scrim Messages</div>
+            </div>
+            <div class="admin-form-section" style="text-align:center;">
+              <div style="font-size:0.8rem;color:var(--text-muted);font-family:var(--font-mono);">DESIGN PROJECTS</div>
+              <div id="dash-stat-designs" style="font-family:var(--font-display);font-size:2rem;color:#fff;font-weight:800;margin:0.4rem 0;">6</div>
+              <div style="font-size:0.75rem;color:var(--text-dim);">Live in Portfolio</div>
+            </div>
+            <div class="admin-form-section" style="text-align:center;">
+              <div style="font-size:0.8rem;color:var(--text-muted);font-family:var(--font-mono);">DIGITAL TOOLS</div>
+              <div id="dash-stat-tools" style="font-family:var(--font-display);font-size:2rem;color:#fff;font-weight:800;margin:0.4rem 0;">2</div>
+              <div style="font-size:0.75rem;color:var(--text-dim);">Active Utilities</div>
+            </div>
+            <div class="admin-form-section" style="text-align:center;">
+              <div style="font-size:0.8rem;color:var(--text-muted);font-family:var(--font-mono);">SYSTEM LATENCY</div>
+              <div style="font-family:var(--font-display);font-size:2rem;color:var(--neon-mint);font-weight:800;margin:0.4rem 0;">12ms</div>
+              <div style="font-size:0.75rem;color:var(--neon-emerald);">All Systems Nominal</div>
+            </div>
+          </div>
+
+          <div class="admin-form-section">
+            <div class="admin-section-heading">QUICK ACTIONS</div>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+              <button class="btn-hero-glow" onclick="document.querySelector('[data-tab=\'inbox\']').click()">
+                <i data-lucide="mail"></i>
+                <span>Read Incoming Inquiries</span>
+              </button>
+              <button class="btn-primary-pill" onclick="document.querySelector('[data-tab=\'designs\']').click()">
+                <i data-lucide="plus"></i>
+                <span>Add New Design Artwork</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 1: HERO & PROFILE -->
+        <div id="view-profile" class="admin-view-panel">
+          <h2 class="admin-panel-title">
+            <i data-lucide="user"></i>
+            <span>Hero & Personal Profile</span>
+          </h2>
+
+          <div class="admin-form-section">
+            <div class="admin-section-heading">PROFILE PHOTOGRAPH</div>
+            <div class="admin-photo-preview-wrap">
+              <img id="admin-photo-preview" src="profile-current.png" alt="Preview" class="admin-photo-thumb">
+              <div style="flex:1;display:flex;flex-direction:column;gap:0.6rem;">
+                <div class="admin-field">
+                  <label class="admin-label">IMAGE URL / PATH</label>
+                  <input type="text" id="admin-photo-url" class="admin-input" placeholder="profile-current.png">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">UPLOAD NEW PHOTO FROM COMPUTER</label>
+                  <input type="file" id="admin-photo-file" class="admin-input" accept="image/*" style="padding:0.4rem;">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-form-section">
+            <div class="admin-section-heading">BASIC IDENTITY & BIO</div>
+            <div class="admin-grid-2">
+              <div class="admin-field">
+                <label class="admin-label">FULL NAME</label>
+                <input type="text" id="admin-fullname" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">EYEBROW GREETING</label>
+                <input type="text" id="admin-eyebrow" class="admin-input">
+              </div>
+            </div>
+
+            <div class="admin-field">
+              <label class="admin-label">ROLE TAGLINE (NEON GRADIENT)</label>
+              <input type="text" id="admin-tagline" class="admin-input">
+            </div>
+
+            <div class="admin-field">
+              <label class="admin-label">HERO BIO DESCRIPTION</label>
+              <textarea id="admin-bio" class="admin-textarea" rows="4"></textarea>
+            </div>
+          </div>
+
+          <div class="admin-form-section">
+            <div class="admin-section-heading">HERO GLASS CARD METRICS</div>
+            <div class="admin-grid-2">
+              <div class="admin-field">
+                <label class="admin-label">STAT 1: VALUE & LABEL</label>
+                <input type="text" id="admin-stat-years" class="admin-input" placeholder="4+">
+                <input type="text" id="admin-stat-years-lbl" class="admin-input" style="margin-top:0.3rem;">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">STAT 2: VALUE & LABEL</label>
+                <input type="text" id="admin-stat-projects" class="admin-input" placeholder="60+">
+                <input type="text" id="admin-stat-projects-lbl" class="admin-input" style="margin-top:0.3rem;">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">STAT 3: VALUE & LABEL</label>
+                <input type="text" id="admin-stat-trophies" class="admin-input" placeholder="35+">
+                <input type="text" id="admin-stat-trophies-lbl" class="admin-input" style="margin-top:0.3rem;">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">STAT 4: VALUE & LABEL</label>
+                <input type="text" id="admin-stat-synergy" class="admin-input" placeholder="100%">
+                <input type="text" id="admin-stat-synergy-lbl" class="admin-input" style="margin-top:0.3rem;">
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-form-section">
+            <div class="admin-section-heading">SOCIAL MEDIA & REACH PROFILES</div>
+            <div class="admin-grid-2">
+              <div class="admin-field">
+                <label class="admin-label">YOUTUBE URL</label>
+                <input type="text" id="admin-soc-youtube" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">DISCORD URL / INVITE</label>
+                <input type="text" id="admin-soc-discord" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">GITHUB URL</label>
+                <input type="text" id="admin-soc-github" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">INSTAGRAM URL</label>
+                <input type="text" id="admin-soc-instagram" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">TWITTER / X URL</label>
+                <input type="text" id="admin-soc-twitter" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">LINKEDIN URL</label>
+                <input type="text" id="admin-soc-linkedin" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">FACEBOOK URL</label>
+                <input type="text" id="admin-soc-facebook" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">TIKTOK URL</label>
+                <input type="text" id="admin-soc-tiktok" class="admin-input">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: ESPORTS & TEAM UNIQUE -->
+        <div id="view-esports" class="admin-view-panel">
+          <h2 class="admin-panel-title">
+            <i data-lucide="swords"></i>
+            <span>Esports & Team Unique Hub</span>
+          </h2>
+
+          <div class="admin-form-section">
+            <div class="admin-section-heading">SQUAD IDENTITY</div>
+            <div class="admin-grid-2">
+              <div class="admin-field">
+                <label class="admin-label">SQUAD NAME</label>
+                <input type="text" id="admin-squad-name" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">CAPTAIN TITLE</label>
+                <input type="text" id="admin-captain-title" class="admin-input">
+              </div>
+            </div>
+
+            <div class="admin-field">
+              <label class="admin-label">SQUAD BACKGROUND BIO</label>
+              <textarea id="admin-squad-bio" class="admin-textarea" rows="3"></textarea>
+            </div>
+
+            <div class="admin-grid-4">
+              <div class="admin-field">
+                <label class="admin-label">TOP 3 PLACEMENT</label>
+                <input type="text" id="admin-top3-rate" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">K/D RATIO</label>
+                <input type="text" id="admin-kd-ratio" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">TIER</label>
+                <input type="text" id="admin-tier" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">SCRIMS TOTAL</label>
+                <input type="text" id="admin-scrims-total" class="admin-input">
+              </div>
+            </div>
+
+            <div class="admin-field">
+              <label class="admin-label">RECENT TOURNAMENT MILESTONE TICKER</label>
+              <input type="text" id="admin-milestone" class="admin-input">
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: DESIGN VAULT MANAGER -->
+        <div id="view-designs" class="admin-view-panel">
+          <h2 class="admin-panel-title">
+            <i data-lucide="palette"></i>
+            <span>Projects &amp; Design Vault</span>
+          </h2>
+
+          <div class="admin-form-section">
+            <div id="admin-design-form-heading" class="admin-section-heading">ADD NEW PROJECT</div>
+            <div class="admin-grid-2">
+              <div class="admin-field">
+                <label class="admin-label">PROJECT TITLE</label>
+                <input type="text" id="admin-new-design-title" class="admin-input" placeholder="e.g. Free Fire Scrim Banner">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">CATEGORY</label>
+                <select id="admin-new-design-cat" class="admin-select">
+                  <option value="branding">Esports Branding</option>
+                  <option value="thumbnails">Thumbnails & Media</option>
+                  <option value="vector">3D & Vector Art</option>
+                  <option value="tools">Smart UI Tools</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="admin-field">
+              <label class="admin-label">BADGE TAG</label>
+              <input type="text" id="admin-new-design-tag" class="admin-input" placeholder="e.g. THUMBNAIL">
+            </div>
+            <div class="admin-grid-2">
+              <div class="admin-field">
+                <label class="admin-label" for="admin-new-design-img">IMAGE URL / PATH</label>
+                <input type="text" id="admin-new-design-img" class="admin-input" placeholder="Paste an image URL or upload an image">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label" for="admin-new-design-file">UPLOAD PROJECT IMAGE</label>
+                <input type="file" id="admin-new-design-file" class="admin-input admin-image-file" accept="image/*">
+                <small class="admin-image-help">Images are optimized before saving. Maximum original file size: 10 MB.</small>
+              </div>
+            </div>
+            <img id="admin-new-design-preview" class="admin-upload-preview" alt="Project image preview" hidden>
+            <div id="admin-new-design-upload-status" class="admin-image-status" role="status"></div>
+            <div class="admin-field">
+              <label class="admin-label" for="admin-new-design-subtext">PROJECT LABEL</label>
+              <input type="text" id="admin-new-design-subtext" class="admin-input" placeholder="e.g. Brand Identity">
+            </div>
+
+            <div class="admin-field">
+              <label class="admin-label" for="admin-new-design-desc">PROJECT DESCRIPTION</label>
+              <textarea id="admin-new-design-desc" class="admin-textarea" rows="2"></textarea>
+            </div>
+
+            <button id="admin-add-design-btn" class="btn-primary-pill" style="align-self:flex-start;">
+              <i data-lucide="plus" style="width:16px;height:16px;"></i>
+              <span>Add Project to Live Portfolio</span>
+            </button>
+            <button type="button" id="admin-cancel-design-edit-btn" class="admin-btn-action" style="display:none;align-self:flex-start;">
+              <span>Cancel Edit</span>
+            </button>
+          </div>
+
+          <div class="admin-form-section">
+            <div class="admin-section-heading">EXISTING LIVE DESIGNS</div>
+            <div id="admin-design-items-list" style="display:flex;flex-direction:column;gap:0.75rem;">
+              <!-- Injected via admin.js -->
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: SMART TOOLS MANAGER -->
+        <div id="view-tools" class="admin-view-panel">
+          <h2 class="admin-panel-title">
+            <i data-lucide="terminal"></i>
+            <span>Smart Tools & Coding Projects</span>
+          </h2>
+
+          <div class="admin-form-section">
+            <div id="admin-tool-form-heading" class="admin-section-heading">ADD NEW DIGITAL TOOL</div>
+            <div class="admin-grid-2">
+              <div class="admin-field">
+                <label class="admin-label">TOOL TITLE</label>
+                <input type="text" id="admin-new-tool-title" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">BADGE</label>
+                <input type="text" id="admin-new-tool-badge" class="admin-input">
+              </div>
+            </div>
+
+            <div class="admin-field">
+              <label class="admin-label">TECH STACK (COMMA SEPARATED)</label>
+              <input type="text" id="admin-new-tool-tags" class="admin-input">
+            </div>
+
+            <div class="admin-grid-2">
+              <div class="admin-field">
+                <label class="admin-label" for="admin-new-tool-img">IMAGE URL / PATH</label>
+                <input type="text" id="admin-new-tool-img" class="admin-input" placeholder="Optional project image URL">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label" for="admin-new-tool-file">UPLOAD PROJECT IMAGE</label>
+                <input type="file" id="admin-new-tool-file" class="admin-input admin-image-file" accept="image/*">
+                <small class="admin-image-help">Images are optimized before saving. Maximum original file size: 10 MB.</small>
+              </div>
+            </div>
+            <img id="admin-new-tool-preview" class="admin-upload-preview" alt="Project image preview" hidden>
+            <div id="admin-new-tool-upload-status" class="admin-image-status" role="status"></div>
+
+            <div class="admin-field">
+              <label class="admin-label">TOOL DESCRIPTION</label>
+              <textarea id="admin-new-tool-desc" class="admin-textarea" rows="2"></textarea>
+            </div>
+
+            <button id="admin-add-tool-btn" class="btn-primary-pill" style="align-self:flex-start;">
+              <i data-lucide="plus" style="width:16px;height:16px;"></i>
+              <span>Add Tool to Live Portfolio</span>
+            </button>
+            <button type="button" id="admin-cancel-tool-edit-btn" class="admin-btn-action" style="display:none;align-self:flex-start;">
+              <span>Cancel Edit</span>
+            </button>
+          </div>
+
+          <div class="admin-form-section">
+            <div class="admin-section-heading">ACTIVE DIGITAL TOOLS</div>
+            <div id="admin-tool-items-list" style="display:flex;flex-direction:column;gap:0.75rem;">
+              <!-- Injected via admin.js -->
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: GROWTH METRICS -->
+        <div id="view-growth" class="admin-view-panel">
+          <h2 class="admin-panel-title">
+            <i data-lucide="trending-up"></i>
+            <span>Growth & Marketing Analytics</span>
+          </h2>
+
+          <div class="admin-form-section">
+            <div class="admin-section-heading">STATISTICS DISPLAYED TO CLIENTS</div>
+            <div class="admin-grid-2">
+              <div class="admin-field">
+                <label class="admin-label">TOTAL REACH & IMPRESSIONS</label>
+                <input type="text" id="admin-growth-imp" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">VIDEO VIEWS GENERATED</label>
+                <input type="text" id="admin-growth-views" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">ENGAGEMENT MULTIPLIER</label>
+                <input type="text" id="admin-growth-mult" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">BRAND & TEAM ASSETS</label>
+                <input type="text" id="admin-growth-assets" class="admin-input">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 6: CONTACT DETAILS -->
+        <div id="view-contact" class="admin-view-panel">
+          <h2 class="admin-panel-title">
+            <i data-lucide="radio"></i>
+            <span>Contact & Transmission Coordinates</span>
+          </h2>
+
+          <div class="admin-form-section">
+            <div class="admin-section-heading">DIRECT CHANNELS</div>
+            <div class="admin-field">
+              <label class="admin-label">CONTACT EMAIL ADDRESS</label>
+              <input type="email" id="admin-cont-email" class="admin-input">
+            </div>
+            <div class="admin-field">
+              <label class="admin-label">SQUAD COMMAND / DIVISION</label>
+              <input type="text" id="admin-cont-div" class="admin-input">
+            </div>
+            <div class="admin-field">
+              <label class="admin-label">LOCATION SPECIFICATION</label>
+              <input type="text" id="admin-cont-loc" class="admin-input">
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 7: PRIVATE INBOX -->
+        <div id="view-inbox" class="admin-view-panel">
+          <h2 class="admin-panel-title">
+            <i data-lucide="inbox"></i>
+            <span>Private Client & Scrim Inquiries</span>
+          </h2>
+
+          <p style="color:var(--text-muted);font-size:0.9rem;">
+            These transmissions are private to you only. Visitors who fill out the contact form send their inquiries directly here.
+          </p>
+
+          <div id="admin-inbox-list" style="display:flex;flex-direction:column;gap:1rem;">
+            <!-- Injected via admin.js -->
+          </div>
+        </div>
+
+        <!-- TAB 8: PRIVACY & SECURITY SETTINGS -->
+        <div id="view-settings" class="admin-view-panel">
+          <h2 class="admin-panel-title">
+            <i data-lucide="lock"></i>
+            <span>Admin Security &amp; Backup Tools</span>
+          </h2>
+
+          <div class="admin-form-section">
+            <div class="admin-section-heading">ADMIN ACCESS SECURITY</div>
+            <p style="font-size:0.85rem;color:var(--text-muted);">
+              The passcode is stored only in the server environment as <code>ADMIN_PIN</code>. Change it in your hosting settings, then restart or redeploy the server.
+            </p>
+          </div>
+
+          <div class="admin-form-section">
+            <div class="admin-section-heading">BACKUP & DATA MANAGEMENT</div>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+              <button id="admin-export-json-btn" class="btn-primary-pill">
+                <i data-lucide="download" style="width:16px;height:16px;"></i>
+                <span>Export JSON Backup</span>
+              </button>
+              <button id="admin-import-json-btn" class="btn-primary-pill">
+                <i data-lucide="upload" style="width:16px;height:16px;"></i>
+                <span>Import JSON Backup</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="admin-form-section" style="border-color:rgba(255,95,86,0.3);">
+            <div class="admin-section-heading" style="color:#ff5f56;">DANGER ZONE</div>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+              <button id="admin-reset-defaults-btn" class="admin-btn-action delete" style="padding:0.7rem 1.4rem;">
+                <i data-lucide="rotate-ccw"></i>
+                <span>Reset to Factory Defaults</span>
+              </button>
+              <button id="admin-logout-btn" class="admin-btn-action" style="padding:0.7rem 1.4rem;">
+                <i data-lucide="log-out"></i>
+                <span>Lock Session & Log Out</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="audio.js"></script>
+  <script src="data.js?v=admin-auth-env-v1"></script>
+  <script src="admin.js?v=admin-auth-env-v1"></script>
+
+  <!-- Dedicated Standalone Admin Authentication & Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const authWrap = document.getElementById('admin-standalone-auth');
+      const dashWindow = document.getElementById('admin-standalone-dashboard');
+      const authInput = document.getElementById('admin-auth-input');
+      const authSubmit = document.getElementById('admin-auth-submit-btn');
+      const authError = document.getElementById('admin-auth-error');
+      const logoutTop = document.getElementById('admin-logout-btn-top');
+      const saveTop = document.getElementById('admin-save-btn-top');
+
+      // Check current session
+      function checkAuth() {
+        if (window.portfolioStore && window.portfolioStore.isAuthenticated()) {
+          authWrap.style.display = 'none';
+          dashWindow.style.display = 'flex';
+          populateAdminForms();
+          updateOverviewStats();
+        } else {
+          authWrap.style.display = 'flex';
+          dashWindow.style.display = 'none';
+          if (authInput) authInput.focus();
+        }
+      }
+
+      function updateOverviewStats() {
+        if (!window.portfolioStore) return;
+        const d = window.portfolioStore.get();
+        const msgEl = document.getElementById('dash-stat-msgs');
+        const desEl = document.getElementById('dash-stat-designs');
+        const toolEl = document.getElementById('dash-stat-tools');
+        if (msgEl) msgEl.textContent = (d.messages || []).length;
+        if (desEl) desEl.textContent = (d.designs || []).length;
+        if (toolEl) toolEl.textContent = (d.tools || []).length;
+        const badge = document.getElementById('admin-inbox-badge-count');
+        if (badge) badge.textContent = (d.messages || []).length;
+      }
+
+      if (authSubmit && authInput) {
+        authSubmit.addEventListener('click', async () => {
+          const pin = authInput.value.trim();
+          authSubmit.disabled = true;
+          try {
+            await window.portfolioStore.login(pin);
+            authError.style.display = 'none';
+            checkAuth();
+            if (window.cyberAudio) window.cyberAudio.playSuccess();
+          } catch (error) {
+            authError.textContent = error.message || 'Access denied. Check the passcode and server configuration.';
+            authError.style.display = 'block';
+            authInput.value = '';
+            authInput.focus();
+          } finally {
+            authSubmit.disabled = false;
+          }
+        });
+
+        authInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') authSubmit.click();
+        });
+      }
+
+      if (logoutTop) {
+        logoutTop.addEventListener('click', () => {
+          window.portfolioStore.logout();
+          checkAuth();
+        });
+      }
+
+      if (saveTop) {
+        saveTop.addEventListener('click', () => {
+          saveAllFormData();
+          updateOverviewStats();
+          showToast("CHANGES PUBLISHED LIVE!");
+          if (window.cyberAudio) window.cyberAudio.playSuccess();
+        });
+      }
+
+      // Check on load
+      setTimeout(checkAuth, 100);
+
+      if (window.lucide) window.lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+{
+  "profile": {
+    "fullName": "MD SHAKIB FARAZI",
+    "roleTagline": "Full-Stack Developer & UI/UX Designer | Graphic Designer & Brand Identity Specialist | Digital Marketer & Brand Strategist | Web Developer & Cybersecurity Learner | Esports Athlete & Team Leader",
+    "eyebrow": "HELLO, I'M",
+    "bio": "I’m a dedicated esports player, creative graphic designer, self-taught programmer, and digital marketing expert currently learning cybersecurity. I specialize in creating engaging digital experiences, developing modern websites and applications, designing standout visuals, and growing online brands through strategic marketing. As the leader of Team Unique, I combine creativity, technology, and leadership to build innovative projects and achieve ambitious goals.",
+    "photoUrl": "profile-current.png",
+    "stats": {
+      "years": "4+",
+      "yearsLabel": "Years Competitive & Design",
+      "projects": "60+",
+      "projectsLabel": "Projects & Smart Tools",
+      "trophies": "35+",
+      "trophiesLabel": "Team Scrims & Trophies",
+      "synergy": "100%",
+      "synergyLabel": "Squad Synergy & Focus"
+    },
+    "socials": {
+      "youtube": "https://youtube.com/@gamershakib07?si=i44uG-FjyZQHELZP",
+      "discord": "https://discord.com/users/1118444538583859271",
+      "github": "https://github.com/mdshakibfarazimail-del",
+      "instagram": "https://www.instagram.com/md_shakib_farazi?cplk=NWJyNzQzcW9xcmhp",
+      "twitter": "https://x.com/Mdshakibfarazi",
+      "linkedin": "https://www.linkedin.com/in/mdshakibfarazi?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "facebook": "https://www.facebook.com/share/1EfKNtkeH9/",
+      "tiktok": "https://www.tiktok.com/@mdshakibfarazi?_r=1&_t=ZS-9AWMRV8zpa5"
+    }
+  },
+  "esports": {
+    "squadName": "TEAM UNIQUE",
+    "captainTitle": "CAPTAIN & IN-GAME LEADER: MD SHAKIB FARAZI",
+    "squadBio": "Team Unique was founded on chemistry, discipline, and unyielding tactical hunger. We analyze tournament circles, engineer synchronized entry-rushes, and maintain an aggressive, clutch-first playstyle in regional scrims and tournaments.",
+    "metrics": {
+      "top3Rate": "68%",
+      "kdRatio": "4.8",
+      "tier": "GM",
+      "scrimsTotal": ""
+    },
+    "recentMilestone": "1st Place Champion in Regional Squad Blitz Scrims (14 Kills in Grand Finals Booyah)."
+  },
+  "designs": [
+    {
+      "id": "des-1",
+      "title": "Team Unique Official Crest",
+      "category": "branding",
+      "tag": "BRANDING",
+      "imageUrl": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop",
+      "description": "Complete visual branding suite, jersey typography, shield emblems, and competitive tournament broadcast graphics.",
+      "subtext": "Identity & Crest"
+    },
+    {
+      "id": "des-2",
+      "title": "High-CTR Scrim Highlights",
+      "category": "thumbnails",
+      "tag": "THUMBNAIL",
+      "imageUrl": "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=800&auto=format&fit=crop",
+      "description": "High-contrast, saturated thumbnail compositions with custom glow typography engineered to maximize YouTube CTR and retention.",
+      "subtext": "Viral Content"
+    },
+    {
+      "id": "des-3",
+      "title": "Neo-Cyberpunk Tactical Mask",
+      "category": "vector",
+      "tag": "3D & VECTOR",
+      "imageUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
+      "description": "Custom vector illustration blending cyberpunk geometric shards with glowing neon gradients for gamer avatars and community merch.",
+      "subtext": "Vector Art"
+    },
+    {
+      "id": "des-4",
+      "title": "Tactical Live Stream Overlay",
+      "category": "branding",
+      "tag": "OVERLAY",
+      "imageUrl": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop",
+      "description": "Animated HUD stream packaging with webcam frames, tournament bracket tickers, starting screens, and automated alerts.",
+      "subtext": "Stream Design"
+    },
+    {
+      "id": "des-5",
+      "title": "ScrimPulse Web UI",
+      "category": "tools",
+      "tag": "UI / TOOL",
+      "imageUrl": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
+      "description": "Modern glassmorphism user interface for calculating tournament match points, leaderboards, and squad statistics in real time.",
+      "subtext": "UI / UX Concept"
+    },
+    {
+      "id": "des-6",
+      "title": "3D Hologram Type Specimen",
+      "category": "vector",
+      "tag": "TYPOGRAPHY",
+      "imageUrl": "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=800&auto=format&fit=crop",
+      "description": "Volumetric metallic 3D typography exploration featuring refractive glass materials and chrome emerald edge illumination.",
+      "subtext": "3D Typography"
+    }
+  ],
+  "tools": [
+    {
+      "id": "tool-1",
+      "title": "ScrimPulse - Free Fire Scorer",
+      "badge": "TOURNAMENT ENGINE",
+      "icon": "flame",
+      "description": "Automated tournament scoring engine that digests squad match results, applies official Free Fire point tables, factors kill multipliers, and outputs real-time leaderboard standings.",
+      "tags": [
+        "JavaScript",
+        "Local Storage",
+        "CSV Export",
+        "Esports Logic"
+      ]
+    },
+    {
+      "id": "tool-2",
+      "title": "Team Unique Nexus Discord Bot",
+      "badge": "COMMUNITY BOT",
+      "icon": "bot",
+      "description": "Custom-built automated Discord bot managing scrim registration, role assignment for registered rosters, automatic voice channel allocation, and match time notifications.",
+      "tags": [
+        "Node.js",
+        "Discord API",
+        "Webhooks",
+        "Automation"
+      ]
+    }
+  ],
+  "growth": {
+    "impressions": "500K+",
+    "impressionsLabel": "TOTAL REACH & IMPRESSIONS",
+    "impressionsDesc": "Across YouTube, Instagram & esports posts",
+    "views": "150K+",
+    "viewsLabel": "VIDEO VIEWS GENERATED",
+    "viewsDesc": "Through optimized thumbnails & hooks",
+    "multiplier": "4.8x",
+    "multiplierLabel": "ENGAGEMENT MULTIPLIER",
+    "multiplierDesc": "Compared to standard gaming channels",
+    "assets": "35+",
+    "assetsLabel": "BRAND & TEAM ASSETS",
+    "assetsDesc": "Crafted for tournaments and squads"
+  },
+  "contact": {
+    "email": "mdshakibfarazi7@gmail.com",
+    "squadDivision": "Team Unique Esports (Free Fire Division)",
+    "location": "Bangladesh • Available Globally (Remote)",
+    "whatsappUrl": "https://wa.me/8801310589692?text=Hi%20Shakib%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project.",
+    "statusText": "ALL SYSTEMS OPERATIONAL // LATENCY: 12ms"
+  },
+  "messages": [],
+  "security": {},
+  "siteCopy": {},
+  "skills": [
+    {
+      "id": "skill-graphic-design",
+      "badge": "GRAPHIC DESIGN",
+      "title": "Graphic Design & Creative",
+      "description": "Creating distinctive visual identities and digital content for esports teams, creators, social media, and online brands.",
+      "icon": "palette",
+      "tags": [
+        "Graphic Design",
+        "Logo Design & Brand Identity",
+        "Photo Editing",
+        "Video Editing",
+        "Esports Branding",
+        "Social Media Design",
+        "YouTube Thumbnails & Banners",
+        "UI/UX Design",
+        "Motion Graphics & Visual Effects"
+      ]
+    },
+    {
+      "id": "skill-web-software",
+      "badge": "WEB & SOFTWARE",
+      "title": "Web & Software Development",
+      "description": "Developing responsive websites, interactive applications, and digital tools while continuing to grow across the full stack.",
+      "icon": "code-2",
+      "tags": [
+        "HTML5, CSS3 & JavaScript",
+        "Python",
+        "Web Design",
+        "Responsive Web Design",
+        "Frontend Development",
+        "Backend Development",
+        "Full-Stack Development",
+        "Website Development",
+        "Web Application Development",
+        "App Development",
+        "Interactive UI & Animation",
+        "Database Integration",
+        "API Integration"
+      ]
+    },
+    {
+      "id": "skill-cybersecurity",
+      "badge": "CYBERSECURITY",
+      "title": "Cybersecurity & Technology",
+      "description": "Building cybersecurity knowledge with an interest in safer systems, networking, Linux, and responsible security practices.",
+      "icon": "shield-alert",
+      "tags": [
+        "Cybersecurity Fundamentals",
+        "Linux & Kali Linux Learning",
+        "Networking Fundamentals",
+        "Web Security Fundamentals",
+        "Ethical Hacking Concepts",
+        "Privacy & Digital Security"
+      ]
+    },
+    {
+      "id": "skill-marketing",
+      "badge": "DIGITAL MARKETING",
+      "title": "Digital Marketing & Branding",
+      "description": "Helping online projects and brands grow with purposeful content, consistent identity, and audience-focused promotion.",
+      "icon": "trending-up",
+      "tags": [
+        "Digital Marketing",
+        "Social Media Marketing",
+        "Content Strategy",
+        "Personal Branding",
+        "YouTube Channel Branding",
+        "Audience Growth Strategy",
+        "Online Business Promotion",
+        "SEO Fundamentals"
+      ]
+    },
+    {
+      "id": "skill-esports",
+      "badge": "ESPORTS & GAMING",
+      "title": "Esports & Gaming",
+      "description": "Competing in Free Fire and leading Team Unique through team strategy, coordination, tournaments, and community building.",
+      "icon": "gamepad-2",
+      "tags": [
+        "Competitive Free Fire",
+        "Esports Team Leadership",
+        "In-Game Strategy & Team Coordination",
+        "Rush Gameplay & Sniping",
+        "Tournament Participation",
+        "Gaming Content Creation",
+        "Esports Team Branding",
+        "Community Building"
+      ]
+    },
+    {
+      "id": "skill-leadership",
+      "badge": "LEADERSHIP & PROJECTS",
+      "title": "Leadership & Digital Projects",
+      "description": "Bringing ideas to life through team leadership, thoughtful planning, creative problem-solving, and continuous learning.",
+      "icon": "rocket",
+      "tags": [
+        "Team Management",
+        "Creative Problem-Solving",
+        "Project Planning",
+        "Digital Product Development",
+        "Portfolio Development",
+        "E-commerce Website Projects",
+        "Continuous Learning & Innovation"
+      ]
+    }
+  ],
+  "appearance": {
+    "theme": "emerald",
+    "customAccent": "",
+    "background": "#0a100d",
+    "surface": "#101916",
+    "displayFont": "Inter",
+    "contentWidth": 1280,
+    "density": "comfortable"
+  },
+  "layout": {
+    "sectionOrder": [
+      "about",
+      "esports",
+      "arsenal-3d",
+      "design",
+      "growth",
+      "contact"
+    ],
+    "sections": {
+      "about": true,
+      "esports": true,
+      "arsenal-3d": true,
+      "design": true,
+      "growth": true,
+      "contact": true
+    }
+  }
+}

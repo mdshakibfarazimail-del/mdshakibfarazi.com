@@ -1,0 +1,29 @@
+{
+  "name": "md-shakib-farazi-portfolio",
+  "version": "1.0.0",
+  "description": "Official 3D Esports, Design & Cyber Portfolio of Md Shakib Farazi (Leader of Team Unique)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "3d",
+    "threejs",
+    "esports",
+    "team-unique",
+    "free-fire",
+    "cybersecurity",
+    "creative-designer"
+  ],
+  "author": "Md Shakib Farazi",
+  "license": "MIT",
+  "dependencies": {
+    "canvas-confetti": "^1.9.4",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "lucide": "^1.16.0",
+    "three": "^0.182.0"
+  }
+}

@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-site-copy="siteTitle">MD SHAKIB FARAZI | Leader of Team Unique • 3D Portfolio</title>
+  <meta name="description" data-site-copy="siteDescription" content="Official portfolio of Md Shakib Farazi — Leader of Team Unique, Free Fire esports competitor, creative graphic designer, self-taught programmer, and cyber security explorer.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <!-- Three.js (r128) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css?v=role-tagline-cycle-v1">
+  <link rel="stylesheet" href="admin.css?v=admin-auth-env-v1">
+</head>
+<body>
+
+  <!-- Fullscreen 3D Background Canvas -->
+  <canvas id="hero-3d-canvas"></canvas>
+  <div class="cyber-grid-overlay"></div>
+  <div class="ambient-glow-mesh"></div>
+
+  <!-- Private Admin Access: via /admin or Ctrl+Shift+A -->
+  <button id="admin-floating-trigger" style="display:none;"></button>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <header class="site-header">
+    <nav class="nav-container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo">
+        <div class="brand-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="brand-name">
+          <span id="dyn-nav-name">SHAKIB FARAZI</span>
+          <span id="dyn-nav-squad">TEAM UNIQUE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul id="site-navigation" class="nav-menu">
+        <li><a href="#hero" class="nav-link active" aria-current="location" data-site-copy="navHome">Home</a></li>
+        <li><a href="#about" class="nav-link" data-site-copy="navAbout">About</a></li>
+        <li><a href="#esports" class="nav-link" data-site-copy="navEsports">Esports</a></li>
+        <li><a href="#arsenal-3d" class="nav-link" data-site-copy="navArsenal">3D Arsenal</a></li>
+        <li><a href="#design" class="nav-link" data-site-copy="navProjects">Projects &amp; Design Vault</a></li>
+        <li><a href="#contact" class="nav-link" data-site-copy="navContact">Contact</a></li>
+      </ul>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Sci-Fi Audio Toggle -->
+        <button id="audio-toggle-btn" class="audio-toggle-btn" title="Toggle Tactical Cyber SFX">
+          <div class="audio-wave">
+            <span class="audio-bar"></span>
+            <span class="audio-bar"></span>
+            <span class="audio-bar"></span>
+          </div>
+          <span class="audio-status-text">SFX: OFF</span>
+        </button>
+
+        <!-- Interactive Terminal Modal Button -->
+        <button class="btn-primary-pill open-terminal-btn" title="Launch Cyber CLI">
+          <i data-lucide="terminal" style="width:16px;height:16px;"></i>
+          <span>CLI</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open navigation" aria-controls="site-navigation" aria-expanded="false">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main App Content Container -->
+  <main class="app-container">
+
+    <!-- ==========================================================================
+         HERO SECTION (Direct Inspiration from Reference Visual)
+         ========================================================================== -->
+    <section id="hero" class="hero-section" data-site-section="hero">
+      <div class="hero-grid">
+
+        <!-- Main introduction above the portrait and bio -->
+        <div class="hero-heading">
+          <div class="hero-eyebrow">
+            <span class="eyebrow-line"></span>
+            <span id="dyn-hero-eyebrow">HELLO, I'M</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span id="dyn-hero-name" class="hero-name">MD SHAKIB FARAZI</span>
+            <span id="dyn-hero-tagline" class="hero-tagline">Full-Stack Developer &amp; UI/UX Designer | Graphic Designer &amp; Brand Identity Specialist | Digital Marketer &amp; Brand Strategist | Web Developer &amp; Cybersecurity Learner | Esports Athlete &amp; Team Leader</span>
+          </h1>
+        </div>
+
+        <!-- Biography and profile details beside the portrait -->
+        <div class="hero-content">
+          <div class="hero-floating-badge">
+            <div class="floating-badge-icon">
+              <i data-lucide="crown" style="width:20px;height:20px;"></i>
+            </div>
+            <div>
+              <div class="floating-badge-title" data-site-copy="heroBadgeTitle">LEADER // TEAM UNIQUE</div>
+              <div class="floating-badge-desc" data-site-copy="heroBadgeDescription">Turning tactics, code & visuals into competitive dominance.</div>
+            </div>
+          </div>
+
+          <p id="dyn-hero-bio" class="hero-bio">
+            I’m a dedicated esports player, creative graphic designer, self-taught programmer, and digital marketing expert currently learning cybersecurity. I specialize in creating engaging digital experiences, developing modern websites and applications, designing standout visuals, and growing online brands through strategic marketing. As the leader of Team Unique, I combine creativity, technology, and leadership to build innovative projects and achieve ambitious goals.
+          </p>
+
+          <!-- Action CTA Group -->
+          <div class="hero-cta-group">
+            <a href="#design" class="btn-hero-glow">
+              <span data-site-copy="heroWorkLabel">View My Work</span>
+              <span class="arrow-icon">→</span>
+            </a>
+
+            <button class="btn-hero-video open-terminal-btn">
+              <span class="video-play-ring">
+                <i data-lucide="play" style="width: 18px; height: 18px; margin-left: 2px;"></i>
+              </span>
+              <div>
+                <span data-site-copy="heroIntelLabel">Launch Intel</span>
+                <span class="video-meta-time" data-site-copy="heroIntelMeta">SYSTEM CLI 2.4</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- Bottom Stats Widget (Matches Inspiration Glass Card) -->
+          <div class="hero-stats-card">
+            <div class="stat-item">
+              <span class="stat-icon"><i data-lucide="user" style="width:20px;height:20px;"></i></span>
+              <span id="dyn-stat-years" class="stat-value">4+</span>
+              <span id="dyn-stat-years-lbl" class="stat-label">Years Competitive & Design</span>
+            </div>
+
+            <div class="stat-item">
+              <span class="stat-icon"><i data-lucide="folder-git-2" style="width:20px;height:20px;"></i></span>
+              <span id="dyn-stat-projects" class="stat-value">60+</span>
+              <span id="dyn-stat-projects-lbl" class="stat-label">Projects & Smart Tools</span>
+            </div>
+
+            <div class="stat-item">
+              <span class="stat-icon"><i data-lucide="trophy" style="width:20px;height:20px;"></i></span>
+              <span id="dyn-stat-trophies" class="stat-value">35+</span>
+              <span id="dyn-stat-trophies-lbl" class="stat-label">Team Scrims & Trophies</span>
+            </div>
+
+            <div class="stat-item">
+              <span class="stat-icon"><i data-lucide="shield-check" style="width:20px;height:20px;"></i></span>
+              <span id="dyn-stat-synergy" class="stat-value">100%</span>
+              <span id="dyn-stat-synergy-lbl" class="stat-label">Squad Synergy & Focus</span>
+            </div>
+          </div>
+
+          <!-- Bottom Left Scroll Indicator -->
+          <div class="hero-scroll-indicator">
+            <span class="scroll-dot"></span>
+            <span class="scroll-line"></span>
+            <span data-site-copy="heroScrollLabel">SCROLL TO EXPLORE</span>
+          </div>
+        </div>
+
+        <!-- Portrait and social links -->
+        <div class="hero-visual-wrapper">
+          <canvas id="hero-orbit-canvas" aria-hidden="true"></canvas>
+          <div class="portrait-glow-backdrop"></div>
+
+          <!-- Portrait Card with Interactive 3D Tilt -->
+          <div id="hero-portrait-card" class="portrait-card">
+            <img id="dyn-hero-photo" src="profile-current.png" alt="Md Shakib Farazi - Leader of Team Unique" class="portrait-img">
+            <div class="portrait-scanner-beam"></div>
+          </div>
+
+          <!-- Social links below the portrait -->
+          <div class="hero-social-sidebar">
+            <a id="dyn-social-youtube" href="https://youtube.com" target="_blank" rel="noopener" class="social-sidebar-link" title="YouTube">
+              <img src="https://cdn.simpleicons.org/youtube/FF0000" alt="" aria-hidden="true" width="18" height="18">
+              <span>YouTube</span>
+            </a>
+            <a id="dyn-social-discord" href="https://discord.com" target="_blank" rel="noopener" class="social-sidebar-link" title="Discord">
+              <img src="https://cdn.simpleicons.org/discord/5865F2" alt="" aria-hidden="true" width="18" height="18">
+              <span>Discord</span>
+            </a>
+            <a id="dyn-social-github" href="https://github.com" target="_blank" rel="noopener" class="social-sidebar-link" title="GitHub">
+              <img src="https://cdn.simpleicons.org/github/FFFFFF" alt="" aria-hidden="true" width="18" height="18">
+              <span>GitHub</span>
+            </a>
+            <a id="dyn-social-instagram" href="https://instagram.com" target="_blank" rel="noopener" class="social-sidebar-link" title="Instagram">
+              <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="" aria-hidden="true" width="18" height="18">
+              <span>Instagram</span>
+            </a>
+            <a id="dyn-social-twitter" href="https://x.com" target="_blank" rel="noopener" class="social-sidebar-link" title="Twitter / X">
+              <img src="https://cdn.simpleicons.org/x/FFFFFF" alt="" aria-hidden="true" width="18" height="18">
+              <span>Twitter/X</span>
+            </a>
+            <a id="dyn-social-linkedin" href="https://linkedin.com" target="_blank" rel="noopener" class="social-sidebar-link" title="LinkedIn">
+              <img src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/svgs/brands/linkedin.svg" alt="" aria-hidden="true" width="18" height="18" style="filter:brightness(0) invert(1);">
+              <span>LinkedIn</span>
+            </a>
+            <a id="dyn-social-facebook" href="https://facebook.com" target="_blank" rel="noopener" class="social-sidebar-link" title="Facebook">
+              <img src="https://cdn.simpleicons.org/facebook/1877F2" alt="" aria-hidden="true" width="18" height="18">
+              <span>Facebook</span>
+            </a>
+            <a id="dyn-social-tiktok" href="https://tiktok.com" target="_blank" rel="noopener" class="social-sidebar-link" title="TikTok">
+              <img src="https://cdn.simpleicons.org/tiktok/FFFFFF" alt="" aria-hidden="true" width="18" height="18">
+              <span>TikTok</span>
+            </a>
+          </div>
+
+          <!-- Bottom Right Floating Selected Works Pill -->
+          <a href="#design" class="hero-bottom-badge">
+            <span data-site-copy="heroSelectedWorks">PORTFOLIO: Selected Works</span>
+            <span data-site-copy="heroSelectedWorksArrow">→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT & HYBRID CAPABILITIES
+         ========================================================================= -->
+    <section id="about" class="section-wrapper" data-site-section="about">
+      <div class="section-header">
+        <div class="section-kicker">
+          <i data-lucide="cpu" style="width:16px;height:16px;"></i>
+          <span data-site-copy="aboutKicker">OPERATIONAL ARCHITECTURE</span>
+        </div>
+        <h2 class="section-title" data-site-copy="aboutTitle">My Skills &amp; Expertise</h2>
+        <p class="section-subtitle" data-site-copy="aboutSubtitle">
+          A multidisciplinary creator combining design, software development, cybersecurity learning, digital marketing, esports, and leadership.
+        </p>
+      </div>
+
+      <div id="skills-grid" class="tools-cyber-grid">
+        <div class="tool-project-card skill-card">
+          <div class="tool-header">
+            <div class="tool-icon-box">
+              <i data-lucide="palette"></i>
+            </div>
+            <span class="tool-badge">GRAPHIC DESIGN</span>
+          </div>
+          <h3 class="tool-title">Graphic Design &amp; Creative</h3>
+          <p class="tool-desc">Creating distinctive visual identities and digital content for esports teams, creators, social media, and online brands.</p>
+          <div class="tool-tech-stack">
+            <span class="tech-tag">Graphic Design</span>
+            <span class="tech-tag">Logo Design &amp; Brand Identity</span>
+            <span class="tech-tag">Photo Editing</span>
+            <span class="tech-tag">Video Editing</span>
+            <span class="tech-tag">Esports Branding</span>
+            <span class="tech-tag">Social Media Design</span>
+            <span class="tech-tag">YouTube Thumbnails &amp; Banners</span>
+            <span class="tech-tag">UI/UX Design</span>
+            <span class="tech-tag">Motion Graphics &amp; Visual Effects</span>
+          </div>
+        </div>
+
+        <div class="tool-project-card skill-card">
+          <div class="tool-header">
+            <div class="tool-icon-box">
+              <i data-lucide="code-2"></i>
+            </div>
+            <span class="tool-badge">WEB &amp; SOFTWARE</span>
+          </div>
+          <h3 class="tool-title">Web &amp; Software Development</h3>
+          <p class="tool-desc">Developing responsive websites, interactive applications, and digital tools while continuing to grow across the full stack.</p>
+          <div class="tool-tech-stack">
+            <span class="tech-tag">HTML5, CSS3 &amp; JavaScript</span>
+            <span class="tech-tag">Web Design</span>
+            <span class="tech-tag">Responsive Web Design</span>
+            <span class="tech-tag">Frontend Development</span>
+            <span class="tech-tag">Backend Development</span>
+            <span class="tech-tag">Full-Stack Development</span>
+            <span class="tech-tag">Website Development</span>
+            <span class="tech-tag">Web Application Development</span>
+            <span class="tech-tag">App Development</span>
+            <span class="tech-tag">Interactive UI &amp; Animation</span>
+            <span class="tech-tag">Database Integration</span>
+            <span class="tech-tag">API Integration</span>
+          </div>
+        </div>
+
+        <div class="tool-project-card skill-card">
+          <div class="tool-header">
+            <div class="tool-icon-box">
+              <i data-lucide="shield-alert"></i>
+            </div>
+            <span class="tool-badge">CYBERSECURITY</span>
+          </div>
+          <h3 class="tool-title">Cybersecurity &amp; Technology</h3>
+          <p class="tool-desc">Building cybersecurity knowledge with an interest in safer systems, networking, Linux, and responsible security practices.</p>
+          <div class="tool-tech-stack">
+            <span class="tech-tag">Cybersecurity Fundamentals</span>
+            <span class="tech-tag">Linux &amp; Kali Linux Learning</span>
+            <span class="tech-tag">Networking Fundamentals</span>
+            <span class="tech-tag">Web Security Fundamentals</span>
+            <span class="tech-tag">Ethical Hacking Concepts</span>
+            <span class="tech-tag">Privacy &amp; Digital Security</span>
+          </div>
+        </div>
+
+        <div class="tool-project-card skill-card">
+          <div class="tool-header">
+            <div class="tool-icon-box">
+              <i data-lucide="trending-up"></i>
+            </div>
+            <span class="tool-badge">DIGITAL MARKETING</span>
+          </div>
+          <h3 class="tool-title">Digital Marketing &amp; Branding</h3>
+          <p class="tool-desc">Helping online projects and brands grow with purposeful content, consistent identity, and audience-focused promotion.</p>
+          <div class="tool-tech-stack">
+            <span class="tech-tag">Digital Marketing</span>
+            <span class="tech-tag">Social Media Marketing</span>
+            <span class="tech-tag">Content Strategy</span>
+            <span class="tech-tag">Personal Branding</span>
+            <span class="tech-tag">YouTube Channel Branding</span>
+            <span class="tech-tag">Audience Growth Strategy</span>
+            <span class="tech-tag">Online Business Promotion</span>
+            <span class="tech-tag">SEO Fundamentals</span>
+          </div>
+        </div>
+
+        <div class="tool-project-card skill-card">
+          <div class="tool-header">
+            <div class="tool-icon-box">
+              <i data-lucide="gamepad-2"></i>
+            </div>
+            <span class="tool-badge">ESPORTS &amp; GAMING</span>
+          </div>
+          <h3 class="tool-title">Esports &amp; Gaming</h3>
+          <p class="tool-desc">Competing in Free Fire and leading Team Unique through team strategy, coordination, tournaments, and community building.</p>
+          <div class="tool-tech-stack">
+            <span class="tech-tag">Competitive Free Fire</span>
+            <span class="tech-tag">Esports Team Leadership</span>
+            <span class="tech-tag">In-Game Strategy &amp; Team Coordination</span>
+            <span class="tech-tag">Rush Gameplay &amp; Sniping</span>
+            <span class="tech-tag">Tournament Participation</span>
+            <span class="tech-tag">Gaming Content Creation</span>
+            <span class="tech-tag">Esports Team Branding</span>
+            <span class="tech-tag">Community Building</span>
+          </div>
+        </div>
+
+        <div class="tool-project-card skill-card">
+          <div class="tool-header">
+            <div class="tool-icon-box">
+              <i data-lucide="rocket"></i>
+            </div>
+            <span class="tool-badge">LEADERSHIP &amp; PROJECTS</span>
+          </div>
+          <h3 class="tool-title">Leadership &amp; Digital Projects</h3>
+          <p class="tool-desc">Bringing ideas to life through team leadership, thoughtful planning, creative problem-solving, and continuous learning.</p>
+          <div class="tool-tech-stack">
+            <span class="tech-tag">Team Management</span>
+            <span class="tech-tag">Creative Problem-Solving</span>
+            <span class="tech-tag">Project Planning</span>
+            <span class="tech-tag">Digital Product Development</span>
+            <span class="tech-tag">Portfolio Development</span>
+            <span class="tech-tag">E-commerce Website Projects</span>
+            <span class="tech-tag">Continuous Learning &amp; Innovation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-mission-card">
+        <span class="tool-badge">MY MISSION</span>
+        <p>To combine creativity, technology, gaming, and business to build meaningful digital experiences, grow Team Unique, and establish a strong presence in the digital world.</p>
+      </div>
+
+      <div class="section-header experience-header">
+        <div class="section-kicker">
+          <i data-lucide="briefcase-business" style="width:16px;height:16px;"></i>
+          <span>EXPERIENCE</span>
+        </div>
+        <h3 class="section-title">Experience Highlights</h3>
+        <p class="section-subtitle">A snapshot of Shakib’s esports leadership, creative practice, and digital project work.</p>
+      </div>
+
+      <div class="tools-cyber-grid experience-grid">
+        <article class="tool-project-card">
+          <div class="tool-header">
+            <div class="tool-icon-box"><i data-lucide="gamepad-2"></i></div>
+            <span class="tool-badge">ESPORTS LEADERSHIP</span>
+          </div>
+          <h4 id="dyn-experience-captain" class="tool-title">Captain &amp; In-Game Leader: MD Shakib Farazi</h4>
+          <p id="dyn-experience-squad-bio" class="tool-desc">Leading Team Unique through team strategy, coordination, and competitive Free Fire.</p>
+        </article>
+
+        <article class="tool-project-card">
+          <div class="tool-header">
+            <div class="tool-icon-box"><i data-lucide="palette"></i></div>
+            <span class="tool-badge">CREATIVE PRACTICE</span>
+          </div>
+          <h4 id="dyn-experience-years" class="tool-title">4+</h4>
+          <p id="dyn-experience-years-label" class="tool-desc">Years Competitive &amp; Design</p>
+          <p class="tool-desc">Experience across competitive esports and creative design.</p>
+        </article>
+
+        <article class="tool-project-card">
+          <div class="tool-header">
+            <div class="tool-icon-box"><i data-lucide="code-2"></i></div>
+            <span class="tool-badge">DIGITAL PROJECTS</span>
+          </div>
+          <h4 id="dyn-experience-projects" class="tool-title">60+</h4>
+          <p id="dyn-experience-projects-label" class="tool-desc">Projects &amp; Smart Tools</p>
+          <p class="tool-desc">Building digital experiences and practical tools while continuing to grow as a self-taught developer.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="esports" class="section-wrapper" data-site-section="esports">
+      <div class="section-header">
+        <div class="section-kicker">
+          <i data-lucide="gamepad-2" style="width:16px;height:16px;"></i>
+          <span data-site-copy="esportsKicker">COMPETITIVE GAMING</span>
+        </div>
+        <h2 class="section-title" data-site-copy="esportsTitle">About Esports</h2>
+        <p class="section-subtitle" data-site-copy="esportsSubtitle">
+          Meet the team, learn about our competitive approach, and explore the current squad profile.
+        </p>
+      </div>
+
+      <div class="tools-cyber-grid">
+        <article class="tool-project-card">
+          <div class="tool-header">
+            <div class="tool-icon-box">
+              <i data-lucide="shield"></i>
+            </div>
+            <span class="tool-badge" data-site-copy="esportsSquadBadge">FREE FIRE SQUAD</span>
+          </div>
+          <h3 id="dyn-squad-name" class="tool-title">TEAM UNIQUE</h3>
+          <p id="dyn-captain-title" class="tool-desc">CAPTAIN &amp; IN-GAME LEADER: MD SHAKIB FARAZI</p>
+          <p id="dyn-squad-bio" class="tool-desc">
+            Team Unique was founded on chemistry, discipline, and tactical teamwork. We focus on smart rotations, coordinated pushes, and improving together through scrims and tournaments.
+          </p>
+        </article>
+
+        <article class="tool-project-card">
+          <div class="tool-header">
+            <div class="tool-icon-box">
+              <i data-lucide="trophy"></i>
+            </div>
+            <span class="tool-badge" data-site-copy="esportsProfileBadge">SQUAD PROFILE</span>
+          </div>
+          <h3 class="tool-title" data-site-copy="esportsSnapshotTitle">Competitive Snapshot</h3>
+          <div class="tool-tech-stack">
+            <span class="tech-tag"><span data-site-copy="esportsTop3Label">Top 3 Rate:</span> <strong id="dyn-esports-top3">68%</strong></span>
+            <span class="tech-tag"><span data-site-copy="esportsKdLabel">K/D Ratio:</span> <strong id="dyn-esports-kd">4.8</strong></span>
+            <span class="tech-tag"><span data-site-copy="esportsTierLabel">Current Tier:</span> <strong id="dyn-esports-tier">GM</strong></span>
+            <span id="dyn-esports-scrims-wrap" class="tech-tag" hidden><span data-site-copy="esportsScrimsLabel">Scrims Played:</span> <strong id="dyn-esports-scrims"></strong></span>
+          </div>
+          <p id="dyn-esports-milestone" class="tool-desc">
+            1st Place Champion in Regional Squad Blitz Scrims (14 Kills in Grand Finals Booyah).
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE 3D ARSENAL & TACTICAL INSPECTOR
+         ========================================================================== -->
+    <section id="arsenal-3d" class="section-wrapper" data-site-section="arsenal-3d">
+      <div class="section-header">
+        <div class="section-kicker">
+          <i data-lucide="box" style="width:16px;height:16px;"></i>
+          <span data-site-copy="arsenalKicker">WEBGL 3D ENVIRONMENT</span>
+        </div>
+        <h2 class="section-title" data-site-copy="arsenalTitle">Interactive 3D Arsenal</h2>
+        <p class="section-subtitle" data-site-copy="arsenalSubtitle">
+          Directly inspect 3D assets in real-time. Drag to rotate in 360°, scroll to zoom, toggle wireframe shaders, and switch neon frequencies.
+        </p>
+      </div>
+
+      <div class="arsenal-inspector-container">
+        <!-- 3D Canvas Viewport -->
+        <div class="arsenal-canvas-wrap">
+          <canvas id="arsenal-3d-canvas"></canvas>
+
+          <div class="arsenal-hud-overlay">
+            <div data-site-copy="arsenalHudStatus">[STATUS] 3D ENGINE ONLINE (THREE.JS)</div>
+            <div data-site-copy="arsenalHudInspect">[INSPECT] DRAG OR TOUCH TO ROTATE 360°</div>
+            <div data-site-copy="arsenalHudOptics">[OPTICS] VOLUMETRIC SPECULAR SHADER</div>
+          </div>
+
+          <div class="hud-crosshair">
+            <div data-site-copy="arsenalCoordinates">TARGET LOCK // 23.8° N 90.4° E</div>
+          </div>
+        </div>
+
+        <!-- Controls Sidebar -->
+        <div class="arsenal-controls-panel">
+          <div>
+            <div class="control-group-title" data-site-copy="arsenalModelLabel">SELECT 3D ARTIFACT</div>
+            <div class="model-selector-grid">
+              <button class="model-btn active" data-model="core">
+                <i data-lucide="zap" style="width:16px;height:16px;"></i>
+                <span data-site-copy="arsenalModelCore">Unique Core</span>
+              </button>
+              <button class="model-btn" data-model="shield">
+                <i data-lucide="shield" style="width:16px;height:16px;"></i>
+                <span data-site-copy="arsenalModelShield">Aegis Shield</span>
+              </button>
+              <button class="model-btn" data-model="relic">
+                <i data-lucide="infinity" style="width:16px;height:16px;"></i>
+                <span data-site-copy="arsenalModelRelic">Quantum Relic</span>
+              </button>
+              <button class="model-btn" data-model="drone">
+                <i data-lucide="radar" style="width:16px;height:16px;"></i>
+                <span data-site-copy="arsenalModelDrone">Recon Drone</span>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <div class="control-group-title" data-site-copy="arsenalThemeLabel">NEON FREQUENCY THEME</div>
+            <div class="theme-palette-row">
+              <button class="color-swatch-btn active" data-name="emerald" data-hex="00ff88" style="background:#00ff88;" title="Emerald Matrix"></button>
+              <button class="color-swatch-btn" data-name="cyan" data-hex="00f0ff" style="background:#00f0ff;" title="Laser Cyan"></button>
+              <button class="color-swatch-btn" data-name="flare" data-hex="ff4655" style="background:#ff4655;" title="Tactical Flare"></button>
+              <button class="color-swatch-btn" data-name="purple" data-hex="b5179e" style="background:#b5179e;" title="Cyber Violet"></button>
+            </div>
+          </div>
+
+          <div>
+            <div class="control-group-title" data-site-copy="arsenalShaderLabel">SHADER MODIFIERS</div>
+            <div class="toggle-toggles-row">
+              <button id="toggle-wireframe-btn" class="toggle-btn">
+                <span data-site-copy="arsenalWireframeLabel">Wireframe Mode</span>
+              </button>
+              <button id="toggle-rotate-btn" class="toggle-btn active">
+                <span data-site-copy="arsenalSpinLabel">Auto Spin</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CREATIVE DESIGN VAULT
+         ========================================================================== -->
+    <section id="design" class="section-wrapper" data-site-section="design">
+      <div class="section-header">
+        <div class="section-kicker">
+          <i data-lucide="sparkles" style="width:16px;height:16px;"></i>
+          <span data-site-copy="designKicker">MY PROJECTS &amp; DESIGN VAULT</span>
+        </div>
+        <h2 class="section-title" data-site-copy="designTitle">Projects &amp; Design Vault</h2>
+        <p class="section-subtitle" data-site-copy="designSubtitle">
+          Explore my creative designs, esports branding, web projects, and software tools in one place.
+        </p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="filter-tabs-row" role="group" aria-label="Filter projects by category">
+        <button class="filter-pill-btn active" data-filter="all" aria-pressed="true" data-site-copy="filterAll">All Projects</button>
+        <button class="filter-pill-btn" data-filter="branding" aria-pressed="false" data-site-copy="filterBranding">Esports Branding</button>
+        <button class="filter-pill-btn" data-filter="thumbnails" aria-pressed="false" data-site-copy="filterThumbnails">Thumbnails &amp; Media</button>
+        <button class="filter-pill-btn" data-filter="vector" aria-pressed="false" data-site-copy="filterVector">3D &amp; Vector Art</button>
+        <button class="filter-pill-btn" data-filter="tools" aria-pressed="false" data-site-copy="filterTools">Smart UI Tools</button>
+        <button class="filter-pill-btn" data-filter="software" aria-pressed="false" data-site-copy="filterSoftware">Software Projects</button>
+      </div>
+      <p id="project-results-count" class="project-results-count" role="status" aria-live="polite"></p>
+
+      <!-- Dynamic Gallery Grid Container -->
+      <div id="design-gallery-grid" class="design-gallery-grid">
+        <!-- Injected via data.js / admin.js -->
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         DIGITAL MARKETING & AUDIENCE REACH METRICS
+         ========================================================================== -->
+    <section id="growth" class="section-wrapper" data-site-section="growth" style="padding-top: 2rem;">
+      <div class="section-header">
+        <div class="section-kicker">
+          <i data-lucide="trending-up" style="width:16px;height:16px;"></i>
+          <span data-site-copy="growthKicker">GROWTH METRICS</span>
+        </div>
+        <h2 class="section-title" data-site-copy="growthTitle">Strategic Digital Marketing & Reach</h2>
+        <p class="section-subtitle" data-site-copy="growthSubtitle">
+          Combining visual psychology, content consistency, and algorithmic positioning to build passionate, engaged esports communities.
+        </p>
+      </div>
+
+      <div class="growth-metrics-banner">
+        <div>
+          <div id="dyn-growth-impressions" class="growth-stat-value">500K+</div>
+          <div class="growth-stat-label" data-site-copy="growthImpressionsLabel">TOTAL REACH & IMPRESSIONS</div>
+          <div class="growth-stat-desc" data-site-copy="growthImpressionsDesc">Across YouTube, Instagram & esports posts</div>
+        </div>
+        <div>
+          <div id="dyn-growth-views" class="growth-stat-value">150K+</div>
+          <div class="growth-stat-label" data-site-copy="growthViewsLabel">VIDEO VIEWS GENERATED</div>
+          <div class="growth-stat-desc" data-site-copy="growthViewsDesc">Through optimized thumbnails & hooks</div>
+        </div>
+        <div>
+          <div id="dyn-growth-multiplier" class="growth-stat-value">4.8x</div>
+          <div class="growth-stat-label" data-site-copy="growthMultiplierLabel">ENGAGEMENT MULTIPLIER</div>
+          <div class="growth-stat-desc" data-site-copy="growthMultiplierDesc">Compared to standard gaming channels</div>
+        </div>
+        <div>
+          <div id="dyn-growth-assets" class="growth-stat-value">35+</div>
+          <div class="growth-stat-label" data-site-copy="growthAssetsLabel">BRAND & TEAM ASSETS</div>
+          <div class="growth-stat-desc" data-site-copy="growthAssetsDesc">Crafted for tournaments and squads</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT & TACTICAL TRANSMISSION PORTAL
+         ========================================================================== -->
+    <section id="contact" class="section-wrapper" data-site-section="contact">
+      <div class="section-header">
+        <div class="section-kicker">
+          <i data-lucide="radio" style="width:16px;height:16px;"></i>
+          <span data-site-copy="contactKicker">DIRECT TRANSMISSION</span>
+        </div>
+        <h2 class="section-title" data-site-copy="contactTitle">Initiate Contact</h2>
+        <p class="section-subtitle" data-site-copy="contactSubtitle">
+          Looking for a squad match, design commission, digital tool collaboration, or brand partnership? Message me on WhatsApp or use the form to prepare an email.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Direct Info Column -->
+        <div class="contact-info-col">
+          <h3 class="contact-headline" data-site-copy="contactHeadline">Ready for the Next Challenge</h3>
+          <p class="contact-body" data-site-copy="contactBody">
+            Whether you want to challenge <strong>Team Unique</strong> in a competitive scrim, need standout graphic designs that command high engagement, or want to collaborate on smart digital tools, I'm always open to new frontiers.
+          </p>
+
+          <div class="contact-direct-links">
+            <a id="contact-email-link" href="mailto:mdshakibfarazi7@gmail.com?subject=Portfolio%20inquiry" class="contact-direct-item">
+              <div class="contact-icon-box">
+                <i data-lucide="mail"></i>
+              </div>
+              <div>
+                <div style="font-family:var(--font-accent);font-weight:700;font-size:0.8rem;color:var(--neon-emerald);" data-site-copy="contactEmailLabel">DIRECT EMAIL</div>
+                <div id="dyn-contact-email">mdshakibfarazi7@gmail.com</div>
+              </div>
+            </a>
+
+            <a id="contact-whatsapp-link" href="https://wa.me/8801310589692?text=Hi%20Shakib%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="contact-direct-item">
+              <div class="contact-icon-box whatsapp-icon-box">
+                <i data-lucide="message-circle"></i>
+              </div>
+              <div>
+                <div class="contact-channel-label" data-site-copy="contactWhatsappLabel">WHATSAPP DIRECT</div>
+                <div data-site-copy="contactWhatsappText">Chat with Shakib</div>
+              </div>
+            </a>
+
+            <div class="contact-direct-item">
+              <div class="contact-icon-box"><i data-lucide="users"></i></div>
+              <div><div class="contact-channel-label" data-site-copy="contactDivisionLabel">SQUAD / DIVISION</div><div id="dyn-contact-division">Team Unique Esports (Free Fire Division)</div></div>
+            </div>
+            <div class="contact-direct-item">
+              <div class="contact-icon-box"><i data-lucide="map-pin"></i></div>
+              <div><div class="contact-channel-label" data-site-copy="contactLocationLabel">LOCATION</div><div id="dyn-contact-location">Bangladesh • Available Globally (Remote)</div></div>
+            </div>
+
+          </div>
+        </div>
+
+        <form id="contact-form" class="contact-form">
+          <h3 class="contact-form-title" data-site-copy="contactFormTitle">Send a Message</h3>
+          <p class="contact-form-note" data-site-copy="contactFormNote">Submit to open a draft in your email app. Review it there and press Send.</p>
+          <div class="form-group">
+            <label for="contact-name" class="form-label" data-site-copy="contactNameLabel">YOUR NAME</label>
+            <input type="text" id="contact-name" name="name" class="form-input" autocomplete="name" maxlength="100" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email" class="form-label" data-site-copy="contactEmailInputLabel">YOUR EMAIL</label>
+            <input type="email" id="contact-email" name="email" class="form-input" autocomplete="email" maxlength="254" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-subject" class="form-label" data-site-copy="contactSubjectLabel">SUBJECT</label>
+            <input type="text" id="contact-subject" name="subject" class="form-input" maxlength="150" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-msg" class="form-label" data-site-copy="contactMessageLabel">MESSAGE</label>
+            <textarea id="contact-msg" name="message" class="form-textarea" maxlength="5000" required></textarea>
+          </div>
+          <button type="submit" class="btn-hero-glow contact-submit-btn">
+            <span data-site-copy="contactSubmitLabel">Open Email Draft</span>
+            <span class="arrow-icon">→</span>
+          </button>
+          <p id="contact-status-msg" class="contact-form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       SITE FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="app-container footer-content">
+      <div class="footer-left">
+        <div class="footer-brand" id="dyn-footer-brand">MD SHAKIB FARAZI</div>
+        <div id="dyn-footer-copy" class="footer-copy">© 2026 MD SHAKIB FARAZI • LEADER OF TEAM UNIQUE. ALL RIGHTS RESERVED.</div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#about" data-site-copy="footerAbout">About</a>
+        <a href="#esports" data-site-copy="footerEsports">Esports</a>
+        <a href="#design" data-site-copy="footerProjects">Projects</a>
+        <a href="#contact" data-site-copy="footerContact">Contact</a>
+      </nav>
+
+      <div class="footer-status-pill">
+        <span class="scroll-dot" style="width:6px;height:6px;"></span>
+        <span id="dyn-footer-status">ALL SYSTEMS OPERATIONAL // LATENCY: 12ms</span>
+        <a href="/admin" title="Private Admin Command Center" style="color:var(--text-dim);opacity:0.35;margin-left:0.5rem;display:inline-flex;align-items:center;text-decoration:none;"><i data-lucide="lock" style="width:12px;height:12px;"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="ai-chat-widget">
+    <section id="ai-chat-panel" class="ai-chat-panel" aria-labelledby="ai-chat-title" hidden>
+      <header class="ai-chat-header">
+        <div class="ai-chat-avatar"><i data-lucide="bot"></i></div>
+        <div>
+          <h2 id="ai-chat-title">Portfolio Chat Helper</h2>
+          <p>AI-enhanced when configured, with a portfolio-based fallback</p>
+        </div>
+        <button type="button" id="ai-chat-close" class="ai-chat-close" aria-label="Close chat">
+          <i data-lucide="x"></i>
+        </button>
+      </header>
+      <div id="ai-chat-messages" class="ai-chat-messages" role="log" aria-live="polite" aria-relevant="additions">
+        <div class="ai-chat-message assistant">Hi! Ask about Shakib’s skills, projects, esports, or contact details. I use portfolio information, and local answers are available if the AI service is offline.</div>
+      </div>
+      <form id="ai-chat-form" class="ai-chat-form">
+        <label class="sr-only" for="ai-chat-input">Your message</label>
+        <textarea id="ai-chat-input" maxlength="1000" rows="1" placeholder="Ask me something..." required></textarea>
+        <button type="submit" id="ai-chat-send" aria-label="Send message">
+          <i data-lucide="send"></i>
+        </button>
+      </form>
+      <p id="ai-chat-status" class="ai-chat-status" role="status">Checking chat availability…</p>
+    </section>
+    <button type="button" id="ai-chat-toggle" class="ai-chat-toggle" aria-label="Open AI chat" aria-controls="ai-chat-panel" aria-expanded="false">
+      <i data-lucide="message-circle"></i>
+      <span class="ai-chat-toggle-label">Portfolio Chat</span>
+    </button>
+  </div>
+
+  <!-- ==========================================================================
+       ADMIN DASHBOARD MODAL WINDOW
+       ========================================================================== -->
+  <div id="admin-modal" class="admin-modal-backdrop">
+    <!-- 1. Authentication Gate (Shown if not logged in) -->
+    <div id="admin-auth-box" class="admin-auth-box">
+      <div class="admin-auth-icon">
+        <i data-lucide="lock" style="width:28px;height:28px;"></i>
+      </div>
+      <h3 class="admin-auth-title">ADMIN ACCESS REQUIRED</h3>
+      <p style="color:var(--text-muted);font-size:0.88rem;">
+        Authenticate to update any section or information of this website in real-time.
+      </p>
+      <input type="password" id="admin-pin-input" class="admin-input" placeholder="Enter Admin Password" style="text-align:center;font-size:1.1rem;letter-spacing:0.2em;">
+      <button id="admin-unlock-btn" class="btn-hero-glow" style="border:none;cursor:pointer;justify-content:center;">
+        <span>Authorize & Enter</span>
+        <span>→</span>
+      </button>
+      <div style="font-size:0.75rem;color:var(--text-dim);font-family:var(--font-mono);">Key shortcut: Ctrl+Shift+A</div>
+    </div>
+
+    <!-- 2. Main Admin Dashboard (Shown when logged in) -->
+    <div id="admin-main-dash" class="admin-dashboard-window" style="display:none;">
+      <!-- Dashboard Header -->
+      <div class="admin-dash-header">
+        <div class="admin-header-title">
+          <i data-lucide="shield" style="width:24px;height:24px;"></i>
+          <span>SHAKIB FARAZI // COMMAND CENTER</span>
+        </div>
+        <div class="admin-header-actions">
+          <button id="admin-save-all-btn" class="admin-save-all-btn">
+            <i data-lucide="save" style="width:16px;height:16px;"></i>
+            <span>SAVE & PUBLISH LIVE</span>
+          </button>
+          <button id="admin-close-btn" class="admin-close-btn" title="Close Panel">
+            &times;
+          </button>
+        </div>
+      </div>
+
+      <!-- Dashboard Body -->
+      <div class="admin-dash-body">
+        <!-- Sidebar Navigation -->
+        <div class="admin-dash-sidebar">
+          <button class="admin-tab-btn active" data-tab="profile">
+            <i data-lucide="user" style="width:18px;height:18px;"></i>
+            <span>Hero & Profile</span>
+          </button>
+          <button class="admin-tab-btn" data-tab="site">
+            <i data-lucide="panels-top-left" style="width:18px;height:18px;"></i>
+            <span>Site Builder</span>
+          </button>
+          <button class="admin-tab-btn" data-tab="esports">
+            <i data-lucide="swords" style="width:18px;height:18px;"></i>
+            <span>Esports & Squad</span>
+          </button>
+          <button class="admin-tab-btn" data-tab="designs">
+            <i data-lucide="palette" style="width:18px;height:18px;"></i>
+            <span>Projects &amp; Design Vault</span>
+          </button>
+          <button class="admin-tab-btn" data-tab="tools">
+            <i data-lucide="terminal" style="width:18px;height:18px;"></i>
+            <span>Smart Tools</span>
+          </button>
+          <button class="admin-tab-btn" data-tab="growth">
+            <i data-lucide="trending-up" style="width:18px;height:18px;"></i>
+            <span>Growth Metrics</span>
+          </button>
+          <button class="admin-tab-btn" data-tab="contact">
+            <i data-lucide="radio" style="width:18px;height:18px;"></i>
+            <span>Contact Details</span>
+          </button>
+          <button class="admin-tab-btn" data-tab="inbox">
+            <i data-lucide="inbox" style="width:18px;height:18px;"></i>
+            <span>Inbox Transmissions</span>
+            <span id="admin-inbox-badge" class="admin-tab-badge">0</span>
+          </button>
+          <button class="admin-tab-btn" data-tab="settings">
+            <i data-lucide="settings" style="width:18px;height:18px;"></i>
+            <span>Settings & Backup</span>
+          </button>
+        </div>
+
+        <!-- Main Content Panes -->
+        <div class="admin-dash-content">
+
+          <!-- SITE CONTENT, VISUAL THEME & LAYOUT -->
+          <div id="view-site" class="admin-view-panel">
+            <h3 class="admin-panel-title">
+              <i data-lucide="panels-top-left"></i>
+              <span>Portfolio Site Builder</span>
+            </h3>
+            <p class="admin-builder-intro">Edit the words, skills, colors, typography, page width, and section order. Use Save &amp; Publish to keep your changes.</p>
+
+            <div class="admin-form-section">
+              <div>
+                <div class="admin-section-heading">WEBSITE COPY &amp; LABELS</div>
+                <p class="admin-section-help">Edit page headings, descriptions, navigation, buttons, and labels.</p>
+              </div>
+              <div id="admin-site-copy-editor" class="admin-copy-groups"></div>
+            </div>
+
+            <div class="admin-form-section">
+              <div>
+                <div class="admin-section-heading">SKILLS &amp; EXPERTISE CARDS</div>
+                <p class="admin-section-help">Add, edit, reorder, or remove the cards in your About section.</p>
+              </div>
+              <div class="admin-grid-2">
+                <div class="admin-field">
+                  <label class="admin-label" for="admin-skill-badge">CARD BADGE</label>
+                  <input type="text" id="admin-skill-badge" class="admin-input" maxlength="60" placeholder="GRAPHIC DESIGN">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label" for="admin-skill-title">CARD TITLE</label>
+                  <input type="text" id="admin-skill-title" class="admin-input" maxlength="100" placeholder="Graphic Design & Creative">
+                </div>
+              </div>
+              <div class="admin-grid-2">
+                <div class="admin-field">
+                  <label class="admin-label" for="admin-skill-icon">LUCIDE ICON NAME</label>
+                  <input type="text" id="admin-skill-icon" class="admin-input" maxlength="40" placeholder="palette">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label" for="admin-skill-tags">SKILL TAGS (ONE PER LINE)</label>
+                  <textarea id="admin-skill-tags" class="admin-textarea" rows="3" placeholder="Graphic Design&#10;Photo Editing"></textarea>
+                </div>
+              </div>
+              <div class="admin-field">
+                <label class="admin-label" for="admin-skill-description">CARD DESCRIPTION</label>
+                <textarea id="admin-skill-description" class="admin-textarea" rows="3"></textarea>
+              </div>
+              <div class="admin-builder-actions">
+                <button type="button" id="admin-save-skill-btn" class="btn-primary-pill"><i data-lucide="plus"></i><span>Add Skill Card</span></button>
+                <button type="button" id="admin-cancel-skill-btn" class="admin-btn-action" hidden>Cancel edit</button>
+              </div>
+              <div id="admin-skill-items-list" class="admin-managed-list"></div>
+            </div>
+
+            <div class="admin-form-section">
+              <div>
+                <div class="admin-section-heading">VISUAL THEME &amp; TYPOGRAPHY</div>
+                <p class="admin-section-help">Choose a neon preset or set your own accent and background colors.</p>
+              </div>
+              <div class="admin-grid-2">
+                <div class="admin-field">
+                  <label class="admin-label" for="admin-theme-preset">ACCENT PRESET</label>
+                  <select id="admin-theme-preset" class="admin-select">
+                    <option value="emerald">Emerald</option>
+                    <option value="cyan">Cyan</option>
+                    <option value="flare">Tactical Red</option>
+                    <option value="purple">Violet</option>
+                  </select>
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label" for="admin-theme-accent">CUSTOM ACCENT OVERRIDE</label>
+                  <input type="color" id="admin-theme-accent" class="admin-color-input" value="#48d6a0">
+                  <button type="button" id="admin-theme-accent-reset" class="admin-btn-action">Use preset accent</button>
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label" for="admin-theme-background">PAGE BACKGROUND</label>
+                  <input type="color" id="admin-theme-background" class="admin-color-input" value="#0a100d">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label" for="admin-theme-surface">CARD SURFACE</label>
+                  <input type="color" id="admin-theme-surface" class="admin-color-input" value="#101916">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label" for="admin-display-font">HEADING FONT</label>
+                  <select id="admin-display-font" class="admin-select">
+                    <option value="Inter">Inter</option>
+                    <option value="Orbitron">Orbitron</option>
+                    <option value="Rajdhani">Rajdhani</option>
+                    <option value="system">System Sans</option>
+                  </select>
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label" for="admin-content-width">CONTENT WIDTH <span id="admin-content-width-value">1280px</span></label>
+                  <input type="range" id="admin-content-width" class="admin-range-input" min="1040" max="1520" step="20" value="1280">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label" for="admin-section-density">SECTION SPACING</label>
+                  <select id="admin-section-density" class="admin-select">
+                    <option value="compact">Compact</option>
+                    <option value="comfortable">Comfortable</option>
+                    <option value="spacious">Spacious</option>
+                  </select>
+                </div>
+              </div>
+              <p class="admin-theme-preview-note">Theme controls preview immediately. Save &amp; Publish stores them.</p>
+            </div>
+
+            <div class="admin-form-section">
+              <div>
+                <div class="admin-section-heading">SECTION VISIBILITY &amp; ORDER</div>
+                <p class="admin-section-help">Hide sections you do not need and use the arrows to arrange the page.</p>
+              </div>
+              <div id="admin-section-order-list" class="admin-section-order-list"></div>
+            </div>
+          </div>
+
+          <!-- TAB 1: HERO & PROFILE -->
+          <div id="view-profile" class="admin-view-panel active">
+            <h3 class="admin-panel-title">
+              <i data-lucide="user"></i>
+              <span>Hero & Personal Profile Editor</span>
+            </h3>
+
+            <!-- Photo Upload & URL -->
+            <div class="admin-form-section">
+              <div class="admin-section-heading">PROFILE PHOTOGRAPH</div>
+              <div class="admin-photo-preview-wrap">
+                <img id="admin-photo-preview" src="profile-current.png" alt="Preview" class="admin-photo-thumb">
+                <div style="flex:1;display:flex;flex-direction:column;gap:0.6rem;">
+                  <div class="admin-field">
+                    <label class="admin-label">IMAGE URL / PATH</label>
+                    <input type="text" id="admin-photo-url" class="admin-input" placeholder="e.g. profile-current.png or https://...">
+                  </div>
+                  <div class="admin-field">
+                    <label class="admin-label">OR UPLOAD NEW PHOTO FROM COMPUTER</label>
+                    <input type="file" id="admin-photo-file" class="admin-input" accept="image/*" style="padding:0.4rem;">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Identity Info -->
+            <div class="admin-form-section">
+              <div class="admin-section-heading">BASIC IDENTITY & BIO</div>
+              <div class="admin-grid-2">
+                <div class="admin-field">
+                  <label class="admin-label">FULL NAME</label>
+                  <input type="text" id="admin-fullname" class="admin-input" placeholder="MD SHAKIB FARAZI">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">EYEBROW TEXT</label>
+                  <input type="text" id="admin-eyebrow" class="admin-input" placeholder="HELLO, I'M">
+                </div>
+              </div>
+
+              <div class="admin-field">
+                <label class="admin-label">ROLE TAGLINE (NEON GRADIENT)</label>
+                <input type="text" id="admin-tagline" class="admin-input" placeholder="Creative Designer & Esports Leader">
+              </div>
+
+              <div class="admin-field">
+                <label class="admin-label">HERO BIO DESCRIPTION</label>
+                <textarea id="admin-bio" class="admin-textarea" rows="4"></textarea>
+              </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="admin-form-section">
+              <div class="admin-section-heading">HERO GLASS CARD METRICS</div>
+              <div class="admin-grid-2">
+                <div class="admin-field">
+                  <label class="admin-label">STAT 1: VALUE & LABEL</label>
+                  <input type="text" id="admin-stat-years" class="admin-input" placeholder="4+">
+                  <input type="text" id="admin-stat-years-lbl" class="admin-input" style="margin-top:0.3rem;" placeholder="Years Competitive">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">STAT 2: VALUE & LABEL</label>
+                  <input type="text" id="admin-stat-projects" class="admin-input" placeholder="60+">
+                  <input type="text" id="admin-stat-projects-lbl" class="admin-input" style="margin-top:0.3rem;" placeholder="Projects & Smart Tools">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">STAT 3: VALUE & LABEL</label>
+                  <input type="text" id="admin-stat-trophies" class="admin-input" placeholder="35+">
+                  <input type="text" id="admin-stat-trophies-lbl" class="admin-input" style="margin-top:0.3rem;" placeholder="Team Scrims & Trophies">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">STAT 4: VALUE & LABEL</label>
+                  <input type="text" id="admin-stat-synergy" class="admin-input" placeholder="100%">
+                  <input type="text" id="admin-stat-synergy-lbl" class="admin-input" style="margin-top:0.3rem;" placeholder="Squad Synergy">
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="admin-form-section">
+              <div class="admin-section-heading">SOCIAL MEDIA URLS</div>
+              <div class="admin-grid-2">
+                <div class="admin-field">
+                  <label class="admin-label">YOUTUBE URL</label>
+                  <input type="text" id="admin-soc-youtube" class="admin-input">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">DISCORD URL / INVITE</label>
+                  <input type="text" id="admin-soc-discord" class="admin-input">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">GITHUB URL</label>
+                  <input type="text" id="admin-soc-github" class="admin-input">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">INSTAGRAM URL</label>
+                  <input type="text" id="admin-soc-instagram" class="admin-input">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">TWITTER / X URL</label>
+                  <input type="text" id="admin-soc-twitter" class="admin-input">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">LINKEDIN URL</label>
+                  <input type="text" id="admin-soc-linkedin" class="admin-input">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">FACEBOOK URL</label>
+                  <input type="text" id="admin-soc-facebook" class="admin-input">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">TIKTOK URL</label>
+                  <input type="text" id="admin-soc-tiktok" class="admin-input">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2: ESPORTS & TEAM UNIQUE -->
+          <div id="view-esports" class="admin-view-panel">
+            <h3 class="admin-panel-title">
+              <i data-lucide="swords"></i>
+              <span>Esports & Team Unique Hub</span>
+            </h3>
+
+            <div class="admin-form-section">
+              <div class="admin-section-heading">SQUAD IDENTITY</div>
+              <div class="admin-grid-2">
+                <div class="admin-field">
+                  <label class="admin-label">SQUAD NAME</label>
+                  <input type="text" id="admin-squad-name" class="admin-input" placeholder="TEAM UNIQUE">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">CAPTAIN TITLE</label>
+                  <input type="text" id="admin-captain-title" class="admin-input">
+                </div>
+              </div>
+
+              <div class="admin-field">
+                <label class="admin-label">SQUAD BACKGROUND BIO</label>
+                <textarea id="admin-squad-bio" class="admin-textarea" rows="3"></textarea>
+              </div>
+
+              <div class="admin-grid-4">
+                <div class="admin-field">
+                  <label class="admin-label">TOP 3 PLACEMENT</label>
+                  <input type="text" id="admin-top3-rate" class="admin-input" placeholder="68%">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">K/D RATIO</label>
+                  <input type="text" id="admin-kd-ratio" class="admin-input" placeholder="4.8">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">TIER</label>
+                  <input type="text" id="admin-tier" class="admin-input" placeholder="GM">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">SCRIMS TOTAL</label>
+                  <input type="text" id="admin-scrims-total" class="admin-input" placeholder="120+">
+                </div>
+              </div>
+
+              <div class="admin-field">
+                <label class="admin-label">RECENT TOURNAMENT MILESTONE TICKER</label>
+                <input type="text" id="admin-milestone" class="admin-input">
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: DESIGN VAULT MANAGER -->
+          <div id="view-designs" class="admin-view-panel">
+            <h3 class="admin-panel-title">
+              <i data-lucide="palette"></i>
+              <span>Projects &amp; Design Vault Manager</span>
+            </h3>
+
+            <!-- Add New Design Card Form -->
+            <div class="admin-form-section">
+              <div id="admin-design-form-heading" class="admin-section-heading">ADD NEW PROJECT</div>
+              <div class="admin-grid-2">
+                <div class="admin-field">
+                  <label class="admin-label">PROJECT TITLE</label>
+                  <input type="text" id="admin-new-design-title" class="admin-input" placeholder="e.g. Squad Jersey Concept 2026">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">CATEGORY</label>
+                  <select id="admin-new-design-cat" class="admin-select">
+                    <option value="branding">Esports Branding</option>
+                    <option value="thumbnails">Thumbnails & Media</option>
+                    <option value="vector">3D & Vector Art</option>
+                    <option value="tools">Smart UI Tools</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="admin-grid-2">
+                <div class="admin-field">
+                  <label class="admin-label">BADGE TAG</label>
+                  <input type="text" id="admin-new-design-tag" class="admin-input" placeholder="e.g. JERSEY / 3D">
+                </div>
+              </div>
+
+              <div class="admin-grid-2">
+                <div class="admin-field">
+                  <label class="admin-label" for="admin-new-design-img">IMAGE URL / PATH</label>
+                  <input type="text" id="admin-new-design-img" class="admin-input" placeholder="Paste an image URL or upload an image">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label" for="admin-new-design-file">UPLOAD PROJECT IMAGE</label>
+                  <input type="file" id="admin-new-design-file" class="admin-input admin-image-file" accept="image/*">
+                  <small class="admin-image-help">Images are optimized before saving. Maximum original file size: 10 MB.</small>
+                </div>
+              </div>
+              <img id="admin-new-design-preview" class="admin-upload-preview" alt="Project image preview" hidden>
+              <div id="admin-new-design-upload-status" class="admin-image-status" role="status"></div>
+              <div class="admin-field">
+                <label class="admin-label" for="admin-new-design-subtext">PROJECT LABEL</label>
+                <input type="text" id="admin-new-design-subtext" class="admin-input" placeholder="e.g. Brand Identity">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label" for="admin-new-design-desc">PROJECT DESCRIPTION</label>
+                <textarea id="admin-new-design-desc" class="admin-textarea" rows="2" placeholder="Details about this creative piece..."></textarea>
+              </div>
+
+              <button id="admin-add-design-btn" class="btn-primary-pill" style="align-self:flex-start;">
+                <i data-lucide="plus" style="width:16px;height:16px;"></i>
+                <span>Add Project To Portfolio</span>
+              </button>
+              <button type="button" id="admin-cancel-design-edit-btn" class="admin-btn-action" style="display:none;align-self:flex-start;">
+                <span>Cancel Edit</span>
+              </button>
+            </div>
+
+            <!-- Existing Designs List -->
+            <div class="admin-form-section">
+              <div class="admin-section-heading">EXISTING DESIGN PROJECTS</div>
+              <div id="admin-design-items-list" style="display:flex;flex-direction:column;gap:0.75rem;">
+                <!-- Populated via admin.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 4: SMART TOOLS MANAGER -->
+          <div id="view-tools" class="admin-view-panel">
+            <h3 class="admin-panel-title">
+              <i data-lucide="terminal"></i>
+              <span>Smart Software Tools Manager</span>
+            </h3>
+
+            <div class="admin-form-section">
+              <div id="admin-tool-form-heading" class="admin-section-heading">ADD NEW DIGITAL TOOL</div>
+              <div class="admin-grid-2">
+                <div class="admin-field">
+                  <label class="admin-label">TOOL TITLE</label>
+                  <input type="text" id="admin-new-tool-title" class="admin-input" placeholder="e.g. ScrimTracker Bot">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">BADGE</label>
+                  <input type="text" id="admin-new-tool-badge" class="admin-input" placeholder="e.g. AUTOMATION">
+                </div>
+              </div>
+
+              <div class="admin-field">
+                <label class="admin-label">TECH STACK (COMMA SEPARATED)</label>
+                <input type="text" id="admin-new-tool-tags" class="admin-input" placeholder="e.g. Node.js, Discord API, Python">
+              </div>
+
+              <div class="admin-grid-2">
+                <div class="admin-field">
+                  <label class="admin-label" for="admin-new-tool-img">IMAGE URL / PATH</label>
+                  <input type="text" id="admin-new-tool-img" class="admin-input" placeholder="Optional project image URL">
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label" for="admin-new-tool-file">UPLOAD PROJECT IMAGE</label>
+                  <input type="file" id="admin-new-tool-file" class="admin-input admin-image-file" accept="image/*">
+                  <small class="admin-image-help">Images are optimized before saving. Maximum original file size: 10 MB.</small>
+                </div>
+              </div>
+              <img id="admin-new-tool-preview" class="admin-upload-preview" alt="Project image preview" hidden>
+              <div id="admin-new-tool-upload-status" class="admin-image-status" role="status"></div>
+
+              <div class="admin-field">
+                <label class="admin-label">TOOL DESCRIPTION</label>
+                <textarea id="admin-new-tool-desc" class="admin-textarea" rows="2"></textarea>
+              </div>
+
+              <button id="admin-add-tool-btn" class="btn-primary-pill" style="align-self:flex-start;">
+                <i data-lucide="plus" style="width:16px;height:16px;"></i>
+                <span>Add Tool To Portfolio</span>
+              </button>
+              <button type="button" id="admin-cancel-tool-edit-btn" class="admin-btn-action" style="display:none;align-self:flex-start;">
+                <span>Cancel Edit</span>
+              </button>
+            </div>
+
+            <div class="admin-form-section">
+              <div class="admin-section-heading">CURRENT SMART TOOLS</div>
+              <div id="admin-tool-items-list" style="display:flex;flex-direction:column;gap:0.75rem;">
+                <!-- Populated via admin.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 5: GROWTH METRICS -->
+          <div id="view-growth" class="admin-view-panel">
+            <h3 class="admin-panel-title">
+              <i data-lucide="trending-up"></i>
+              <span>Digital Marketing & Growth Metrics</span>
+            </h3>
+
+            <div class="admin-form-section">
+              <div class="admin-section-heading">AUDIENCE NUMBERS</div>
+              <div class="admin-grid-2">
+                <div class="admin-field">
+                  <label class="admin-label">TOTAL REACH & IMPRESSIONS</label>
+                  <input type="text" id="admin-growth-imp" class="admin-input" placeholder="500K+">
+                  <input type="text" id="admin-growth-imp-lbl" class="admin-input" placeholder="Metric label">
+                  <textarea id="admin-growth-imp-desc" class="admin-textarea" rows="2" placeholder="Short metric description"></textarea>
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">VIDEO VIEWS GENERATED</label>
+                  <input type="text" id="admin-growth-views" class="admin-input" placeholder="150K+">
+                  <input type="text" id="admin-growth-views-lbl" class="admin-input" placeholder="Metric label">
+                  <textarea id="admin-growth-views-desc" class="admin-textarea" rows="2" placeholder="Short metric description"></textarea>
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">ENGAGEMENT MULTIPLIER</label>
+                  <input type="text" id="admin-growth-mult" class="admin-input" placeholder="4.8x">
+                  <input type="text" id="admin-growth-mult-lbl" class="admin-input" placeholder="Metric label">
+                  <textarea id="admin-growth-mult-desc" class="admin-textarea" rows="2" placeholder="Short metric description"></textarea>
+                </div>
+                <div class="admin-field">
+                  <label class="admin-label">BRAND & SQUAD ASSETS</label>
+                  <input type="text" id="admin-growth-assets" class="admin-input" placeholder="35+">
+                  <input type="text" id="admin-growth-assets-lbl" class="admin-input" placeholder="Metric label">
+                  <textarea id="admin-growth-assets-desc" class="admin-textarea" rows="2" placeholder="Short metric description"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 6: CONTACT DETAILS -->
+          <div id="view-contact" class="admin-view-panel">
+            <h3 class="admin-panel-title">
+              <i data-lucide="radio"></i>
+              <span>Contact Transmission Info</span>
+            </h3>
+
+            <div class="admin-form-section">
+              <div class="admin-section-heading">DIRECT CHANNELS</div>
+              <div class="admin-field">
+                <label class="admin-label">CONTACT EMAIL ADDRESS</label>
+                <input type="email" id="admin-cont-email" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">SQUAD COMMAND / DIVISION</label>
+                <input type="text" id="admin-cont-div" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">LOCATION SPECIFICATION</label>
+                <input type="text" id="admin-cont-loc" class="admin-input">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">WHATSAPP CONTACT LINK</label>
+                <input type="url" id="admin-cont-whatsapp" class="admin-input" placeholder="https://wa.me/...">
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">FOOTER STATUS MESSAGE</label>
+                <input type="text" id="admin-cont-status" class="admin-input">
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 7: INBOX TRANSMISSIONS -->
+          <div id="view-inbox" class="admin-view-panel">
+            <h3 class="admin-panel-title">
+              <i data-lucide="inbox"></i>
+              <span>Incoming Contact Transmissions</span>
+            </h3>
+
+            <p style="color:var(--text-muted);font-size:0.88rem;">
+              All messages submitted through the website's contact form arrive here in real-time.
+            </p>
+
+            <div id="admin-inbox-list" style="display:flex;flex-direction:column;gap:1rem;">
+              <!-- Populated via admin.js -->
+            </div>
+          </div>
+
+          <!-- TAB 8: SETTINGS & BACKUP -->
+          <div id="view-settings" class="admin-view-panel">
+            <h3 class="admin-panel-title">
+              <i data-lucide="settings"></i>
+              <span>Admin Security, Backups & Reset</span>
+            </h3>
+
+            <div class="admin-form-section">
+              <div class="admin-section-heading">ADMIN ACCESS SECURITY</div>
+              <p class="admin-builder-intro">The admin passcode is stored only on the server in the <code>ADMIN_PIN</code> environment variable. Change it in your hosting provider settings, then restart or redeploy the server.</p>
+            </div>
+
+            <div class="admin-form-section">
+              <div class="admin-section-heading">BACKUP & DATA RESTORATION</div>
+              <p style="font-size:0.85rem;color:var(--text-muted);">
+                Export all your portfolio data (including custom designs, stats, tools, and inbox messages) as a single JSON file, or restore from a previous backup anytime.
+              </p>
+              <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+                <button id="admin-export-json-btn" class="btn-primary-pill">
+                  <i data-lucide="download" style="width:16px;height:16px;"></i>
+                  <span>Export Data Backup (JSON)</span>
+                </button>
+                <button id="admin-import-json-btn" class="btn-primary-pill">
+                  <i data-lucide="upload" style="width:16px;height:16px;"></i>
+                  <span>Import Data Backup (JSON)</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="admin-form-section" style="border-color:rgba(255,95,86,0.3);">
+              <div class="admin-section-heading" style="color:#ff5f56;">DANGER ZONE</div>
+              <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+                <button id="admin-reset-defaults-btn" class="admin-btn-action delete" style="padding:0.7rem 1.4rem;font-size:0.88rem;">
+                  <i data-lucide="rotate-ccw" style="width:16px;height:16px;"></i>
+                  <span>Reset All To Original Defaults</span>
+                </button>
+                <button id="admin-logout-btn" class="admin-btn-action" style="padding:0.7rem 1.4rem;font-size:0.88rem;">
+                  <i data-lucide="log-out" style="width:16px;height:16px;"></i>
+                  <span>Lock & Log Out Of Admin Mode</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       INTERACTIVE CYBER TERMINAL MODAL (CLI)
+       ========================================================================== -->
+  <div id="terminal-modal" class="terminal-modal-backdrop">
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <div class="terminal-dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="terminal-title-text">shakib@team-unique-os: ~ (bash / zsh)</div>
+        <button id="close-terminal-btn" class="terminal-close-btn">&times;</button>
+      </div>
+
+      <div id="terminal-cli-body" class="terminal-body">
+        <div style="color:var(--neon-emerald);font-weight:700;">
+          =======================================================<br>
+          SHAKIB FARAZI TACTICAL CLI // SYSTEM VERSION 4.0.9<br>
+          LEADER OF TEAM UNIQUE • FREE FIRE • DESIGN • CODE • CYBER<br>
+          =======================================================
+        </div>
+        <div style="color:#94a3b8;margin:0.5rem 0;">Type <strong style="color:#fff;">help</strong> to inspect available system commands.</div>
+      </div>
+
+      <div style="padding:0.75rem 1.25rem;background:#030609;border-top:1px solid rgba(0,255,136,0.15);">
+        <div class="terminal-input-row">
+          <span class="terminal-prompt-lbl">guest@shakib-os:~$</span>
+          <input type="text" id="terminal-cli-input" class="terminal-input-field" placeholder="type command (e.g. whoami, esports, tools, admin, help)..." autofocus>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       LIGHTBOX MODAL FOR PORTFOLIO ITEMS
+       ========================================================================== -->
+  <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" aria-describedby="lightbox-desc">
+    <div class="lightbox-content">
+      <button id="close-lightbox-btn" class="lightbox-close-btn" type="button" aria-label="Close project preview">&times;</button>
+      <img id="lightbox-img" src="" alt="Project Preview" class="lightbox-img">
+      <div class="lightbox-details">
+        <h3 id="lightbox-title" class="lightbox-title"></h3>
+        <p id="lightbox-desc" class="lightbox-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="audio.js"></script>
+  <script src="threeScene.js?v=3d-landing-v2"></script>
+  <script src="data.js?v=admin-auth-env-v1"></script>
+  <script src="admin.js?v=admin-auth-env-v1"></script>
+  <script src="main.js?v=role-tagline-cycle-v1"></script>
+
+  <!-- Lucide Icon Initialization -->
+  <script>
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
